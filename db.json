@@ -1,0 +1,44 @@
+{
+  "users": [],
+  "products": [
+    {
+      "name": "Giá lamborghini",
+      "originalPrice": 3212122,
+      "saleOffPrice": 1212,
+      "categories": "phone",
+      "feature": "ngonn",
+      "description": "ngônnn",
+      "id": 17
+    },
+    {
+      "name": "longggggggg",
+      "originalPrice": 1212,
+      "saleOffPrice": 111,
+      "categories": "phone",
+      "feature": "nbnb",
+      "description": "nbnbnb",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658332672/anhhtus/mv4jotuv8ascbe9hfvw5.gif",
+      "id": 18
+    },
+    {
+      "name": "thêm mới ",
+      "originalPrice": 1312313311,
+      "saleOffPrice": 1211212,
+      "categories": "phone",
+      "feature": "tttttttttttttttt",
+      "description": "ttttttttttttttttttttt",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658332703/anhhtus/b3vr0meouwop6kt37wbe.gif",
+      "id": 19
+    },
+    {
+      "name": "ông cháu",
+      "originalPrice": 9999999999999,
+      "saleOffPrice": 888888888888,
+      "categories": "laptop",
+      "feature": "bvbvbvvbbb",
+      "description": "bvbvbbbbvb",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658333031/anhhtus/zsg2wlajxszghjq22ngu.gif",
+      "id": 20
+    }
+  ]
+}
