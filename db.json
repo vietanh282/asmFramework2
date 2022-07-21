@@ -2,25 +2,6 @@
   "users": [],
   "products": [
     {
-      "name": "Giá lamborghini",
-      "originalPrice": 3212122,
-      "saleOffPrice": 1212,
-      "categories": "phone",
-      "feature": "ngonn",
-      "description": "ngônnn",
-      "id": 17
-    },
-    {
-      "name": "longggggggg",
-      "originalPrice": 1212,
-      "saleOffPrice": 111,
-      "categories": "phone",
-      "feature": "nbnb",
-      "description": "nbnbnb",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658332672/anhhtus/mv4jotuv8ascbe9hfvw5.gif",
-      "id": 18
-    },
-    {
       "name": "thêm mới ",
       "originalPrice": 1312313311,
       "saleOffPrice": 1211212,
@@ -39,6 +20,46 @@
       "description": "bvbvbbbbvb",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658333031/anhhtus/zsg2wlajxszghjq22ngu.gif",
       "id": 20
+    },
+    {
+      "name": "ASUS ROG Phone 5S 16GB 512GB",
+      "originalPrice": 19490,
+      "saleOffPrice": 10,
+      "categories": "phone",
+      "feature": "Cấu hình khủng long, chiến mọi tựa game - Chip Snapdragon 888+ cực mạnh, hỗ trợ 5G",
+      "description": "Smartphone gaming của Asus còn được trang bị 2 màn hình ấn tượng với màn hình chính 6.78 inches, tấm nền AMOLED tần số quét 144Hz cho khả năng hiển thị màu sắc rực rỡ. Ngoài ra màn hình phụ nhằm hiển thị thêm một số thông tin và thông báo tin nhắn...",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658362941/anhhtus/yiyppweddkixcf590tdi.jpg",
+      "id": 21
+    },
+    {
+      "name": "Realme 8 5G",
+      "originalPrice": 69999,
+      "saleOffPrice": 5678,
+      "categories": "phone",
+      "feature": "dẹp",
+      "description": "rẻ",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658363203/anhhtus/nxzntexshqpdqzzryepb.gif",
+      "id": 22
+    },
+    {
+      "name": " lamborghini",
+      "originalPrice": 666666,
+      "saleOffPrice": 77777,
+      "categories": "tablet",
+      "feature": "xấy",
+      "description": "đẹp",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658365193/anhhtus/bwgrfxqck9krctlokfu0.gif",
+      "id": 23
+    },
+    {
+      "name": "ASUS ROG Phone 5S 16GB 512GB",
+      "originalPrice": 19400000,
+      "saleOffPrice": 1600000,
+      "categories": "phone",
+      "feature": "Pin khủng, sủ dụng cực lâu - Viên pin lớn 6000mAh, sạc nhanh 65W",
+      "description": "Bắt trọn mọi khoảnh khắc - Cụm 3 camera sau lên đến 64MP, hỗ trợ quay phim 8K cực đỉnh ",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658366913/anhhtus/ekllf2og10xlos8rqe7s.png",
+      "id": 26
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
-import ProductAdminPage from './page/Admin/Product/product'
+import ListProduct from './page/Admin/Product/product'
 import AdminLayout from './component/layout/admin'
 import Home from './page/home'
 import WebsiteLayout from './page/WebsiteLayout'
@@ -18,12 +18,10 @@ function App(props: any) {
           <Route path='/' element={<WebsiteLayout />}>
             <Route index element={<Home />} />
           </Route>
-
-
           <Route path='admin' element={<AdminLayout />}>
             <Route index element={<Navigate to={"product"} />} />
             <Route path='product'>
-              <Route index element={<ProductAdminPage />} />
+              <Route index element={<ListProduct />} />
               <Route path='add' element={<AddProductPage />} />
               <Route path='edit/:id' element={<EditProduct />} />
               {/* <Route path='categories' element={<CategoriesPage />} /> */}

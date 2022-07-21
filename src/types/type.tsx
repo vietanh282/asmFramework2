@@ -4,5 +4,5 @@ export type ProductType = {
     saleOffPrice: number;
     feature: string;
     description: string;
-
+    
 }

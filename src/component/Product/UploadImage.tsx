@@ -4,7 +4,6 @@ import { Typography, Button, Input } from 'antd'
 import { PlusCircleOutlined } from '@ant-design/icons';
 import axios from "axios";
 import { upload } from "../../api/images";
-// import { upload } from "../../api/products";
 
 const { TextArea } = Input
 type  AddImageProps  = {

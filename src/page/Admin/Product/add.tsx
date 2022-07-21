@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import { Typography, Col, Row, Button, Checkbox, Form, Input, InputNumber, Select, message } from 'antd'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { add } from '../../../api/product';
 import UploadImage from '../../../component/Product/UploadImage';
 
@@ -137,7 +137,8 @@ const AddProduct = () => {
 						</Form.Item>
 
 						<Form.Item>
-							<Button type="primary" htmlType="submit">
+							<Button type="primary" htmlType="submit" >
+								<Link to={'admin/product'}/>
 								Tạo mới sản phẩm
 							</Button>
 						</Form.Item>

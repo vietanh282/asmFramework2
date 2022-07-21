@@ -21,7 +21,7 @@ interface DataType {
 }
 
 type ProductManagerProps = {
-    
+
     // onRemoveProduct: (id:number) => void
 }
 
@@ -48,7 +48,7 @@ const ListProduct = () => {
     }, [])
 
     const { isLoading, data, error } = useQuery<any>(['Product'], listProduct)
-    
+
     // setProduct(data)
 
     const onRemoveProduct = (id: any) => {
@@ -56,7 +56,7 @@ const ListProduct = () => {
         message.loading({ content: 'Loading...' });
 
         setTimeout(() => {
-            
+
             removeProduct(id);
             setConfirmLoading(false);
 
@@ -65,13 +65,21 @@ const ListProduct = () => {
             navigate("/admin")
         }, 1000)
     }
-    
+
     const columns: ColumnsType<DataType> = [
         {
             title: 'Tên sản phẩm',
             dataIndex: 'name',
             key: 'name',
             render: text => <a>{text}</a>,
+        },
+        {
+            title: 'Hình ảnh',
+            dataIndex: 'image',
+            key: 'image',
+            render: text => <img src={text} alt=""  width={100}/>,
+
+
         },
         {
             title: 'Đặc điểm',
@@ -110,7 +118,6 @@ const ListProduct = () => {
                         <Link to={`/admin/product/edit/${record.id}`} >
                             <span className="text-white">Sửa</span>
                         </Link>
-
                     </Button>
 
                     <Popconfirm
