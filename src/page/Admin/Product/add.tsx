@@ -1,21 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
 import { Typography, Col, Row, Button, Checkbox, Form, Input, InputNumber, Select, message } from 'antd'
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { add } from '../../../api/product';
 import UploadImage from '../../../component/Product/UploadImage';
+import { listCate } from '../../../api/category';
 
 const { TextArea } = Input
 const { Option } = Select;
 
 const AddProduct = () => {
 	const [image, setUploadedImage] = React.useState('')
+	const [category, setCategory] = useState([])
 	const navigate = useNavigate()
 	const onHandleAdd = (image: any) => {
 		// console.log(image);
 		setUploadedImage(image.img)
 
 	}
+
+	useEffect(() => {
+		const listcategory = async () => {
+			const { data } = await listCate();
+			console.log(data);
+
+			setCategory(data)
+		}
+		listcategory();
+	}, [])
 	const onFinish = async (values: any) => {
 		console.log('Success:', values);
 		console.log(image);
@@ -26,16 +38,17 @@ const AddProduct = () => {
 			if (Number(values.saleOffPrice) > Number(values.originalPrice)) {
 				// values.saleOffPrice = "Mã giảm giá quá lớn"
 				message.error("Giá giảm không được > giá cũ")
-				
+
 
 
 			} else if (!image) {
 				message.error("Bạn chưa chọn ảnh")
-			} else{
+			} else {
 				const data = await add({ ...values, image })
 				// console.log(data);
 
-				message.success("Tạo mới thành công")
+				message.success("Tạo mới thành công");
+				navigate("/admin")
 			}
 
 			// navigate(-1)
@@ -58,10 +71,12 @@ const AddProduct = () => {
 			<Row gutter={16}>
 				<Col span={10}>
 					<UploadImage onAdd={onHandleAdd} />
+					{/* <UploadTest/> */}
 				</Col>
 				<Col span={14}>
 					<Typography.Title level={5}>Thông tin sản phẩm</Typography.Title>
 					<Form
+						// name="product"
 						initialValues={{}}
 						onFinish={onFinish}
 						onFinishFailed={onFinishFailed}
@@ -101,7 +116,7 @@ const AddProduct = () => {
 
 								</Form.Item>
 							</Col>
-							<Col span={12}>
+							< Col span={12} >
 								<Form.Item
 									label="Phân loại"
 									name="categories"
@@ -116,7 +131,7 @@ const AddProduct = () => {
 										<Option value="tablet">Máy tính bảng</Option>
 									</Select>
 								</Form.Item>
-							</Col>
+							</Col >
 						</Row>
 
 						<Form.Item
@@ -137,8 +152,7 @@ const AddProduct = () => {
 						</Form.Item>
 
 						<Form.Item>
-							<Button type="primary" htmlType="submit" >
-								<Link to={'admin/product'}/>
+							<Button type="primary" htmlType="submit">
 								Tạo mới sản phẩm
 							</Button>
 						</Form.Item>

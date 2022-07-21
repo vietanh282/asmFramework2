@@ -2,13 +2,13 @@
   "users": [],
   "products": [
     {
-      "name": "thêm mới ",
-      "originalPrice": 1312313311,
-      "saleOffPrice": 1211212,
+      "name": "thêm mới update",
+      "originalPrice": 123456,
+      "saleOffPrice": 12345,
       "categories": "phone",
-      "feature": "tttttttttttttttt",
-      "description": "ttttttttttttttttttttt",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658332703/anhhtus/b3vr0meouwop6kt37wbe.gif",
+      "feature": "yyyyyyyyy",
+      "description": "yyyyyyyy",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658396394/anhhtus/bzlnnd9vpafzmcbi5rh2.gif",
       "id": 19
     },
     {
@@ -60,6 +60,16 @@
       "description": "Bắt trọn mọi khoảnh khắc - Cụm 3 camera sau lên đến 64MP, hỗ trợ quay phim 8K cực đỉnh ",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658366913/anhhtus/ekllf2og10xlos8rqe7s.png",
       "id": 26
+    },
+    {
+      "name": "sản phẩm mới",
+      "originalPrice": 99999,
+      "saleOffPrice": 8888,
+      "categories": "laptop",
+      "feature": "1111111",
+      "description": "22222222222",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658396435/anhhtus/prwzgiwyagodvms1snxx.png",
+      "id": 27
     }
   ]
 }
