@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
 import { Typography, Col, Row, Button, Checkbox, Form, Input, InputNumber, Select, message } from 'antd'
 import { useNavigate, useParams } from "react-router-dom";
-import { editProduct, getProductId } from '../../../api/product';
+import { add, editProduct, getProductId, listProduct } from '../../../api/product';
 import UploadImage from '../../../component/Product/UploadImage';
 import { useQuery } from '@tanstack/react-query';
 import { listCate } from '../../../api/category';
@@ -13,43 +13,43 @@ const { TextArea } = Input
 const { Option } = Select;
 
 const EditProduct = () => {
-  const [image, setUploadedImage] = React.useState('')
-  const [category, setCategory] = useState([])
+	const [image, setUploadedImage] = React.useState('')
+	const [category, setCategory] = useState([])
 	const navigate = useNavigate()
 
-  const { id } = useParams();
-  const [form] = Form.useForm();
+	const { id } = useParams();
+	const [form] = Form.useForm();
 
 	const onHandleAdd = (image: any) => {
 		// console.log(image);
 		setUploadedImage(image.img)
 
 	}
-  
-  useEffect((() => {
-    const imgPreview = document.getElementById("imgPreview");
-    const imgPost = document.getElementById("file-upload");
 
-    if (id) {
-      const getCate = async (id: any) => {
-          const { data } = await getProductId(id);
-          console.log(data.image);
-          form.setFieldsValue(data)
-          // onreset(payload)
-        
-      }
-      getCate(id);
-  }
-  }),[])
-  useEffect(() => {
-    const listcategory = async () => {
-        const { data } = await listCate();
-        console.log(data);
+	useEffect((() => {
+		const imgPreview = document.getElementById("imgPreview");
+		const imgPost = document.getElementById("file-upload");
 
-        setCategory(data)
-    }
-    listcategory();
-}, [])
+		if (id) {
+			const getCate = async (id: any) => {
+				const { data } = await getProductId(id);
+				console.log(data.image);
+				form.setFieldsValue(data)
+				// onreset(payload)
+
+			}
+			getCate(id);
+		}
+	}), [])
+	useEffect(() => {
+		const listcategory = async () => {
+			const { data } = await listCate();
+			console.log(data);
+
+			setCategory(data)
+		}
+		listcategory();
+	}, [])
 	const onFinish = async (values: any) => {
 		console.log('Success:', values);
 		console.log(image);
@@ -60,16 +60,16 @@ const EditProduct = () => {
 			if (Number(values.saleOffPrice) > Number(values.originalPrice)) {
 				// values.saleOffPrice = "Mã giảm giá quá lớn"
 				message.error("Giá giảm không được > giá cũ")
-				
+
 
 
 			} else if (!image) {
 				message.error("Bạn chưa chọn ảnh")
-			} else{
+			} else {
 				const data = await editProduct({ ...values, image, id })
 				// console.log(data);
 				message.success("Cập nhật thành công");
-        navigate("/admin")
+				navigate("/admin")
 			}
 
 			// navigate(-1)
@@ -91,15 +91,15 @@ const EditProduct = () => {
 			</Breadcrumb>
 			<Row gutter={16}>
 				<Col span={10}>
-				
-            <UploadImage  onAdd={onHandleAdd} />
-          
+
+					<UploadImage onAdd={onHandleAdd} />
+
 					{/* <UploadTest/> */}
 				</Col>
 				<Col span={14}>
 					<Typography.Title level={5}>Thông tin sản phẩm</Typography.Title>
 					<Form
-            form={form}
+						form={form}
 						// name="product"
 						initialValues={{}}
 						onFinish={onFinish}
@@ -147,7 +147,7 @@ const EditProduct = () => {
 									rules={[{ required: true }]}
 								>
 									<Select style={{ width: '100%' }} size="large">
-										{category.map((item:any) => (
+										{category.map((item: any) => (
 											<Option value={item.name}>{item.name}</Option>
 										))}
 									</Select>

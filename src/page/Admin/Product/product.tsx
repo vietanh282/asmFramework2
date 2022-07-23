@@ -6,7 +6,7 @@ import { SearchOutlined, PlusOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
 
 import { listProduct, removeProduct } from '../../../api/product';
-import { useQuery } from '@tanstack/react-query';
+import {  useQuery } from '@tanstack/react-query'
 import { listCate } from '../../../api/category';
 
 // import { useQuery } from 'react-query'
@@ -21,7 +21,7 @@ interface DataType {
 }
 
 type ProductManagerProps = {
-
+    
     // onRemoveProduct: (id:number) => void
 }
 
@@ -48,7 +48,7 @@ const ListProduct = () => {
     }, [])
 
     const { isLoading, data, error } = useQuery<any>(['Product'], listProduct)
-
+    
     // setProduct(data)
 
     const onRemoveProduct = (id: any) => {
@@ -56,7 +56,7 @@ const ListProduct = () => {
         message.loading({ content: 'Loading...' });
 
         setTimeout(() => {
-
+            
             removeProduct(id);
             setConfirmLoading(false);
 
@@ -66,6 +66,10 @@ const ListProduct = () => {
         }, 1000)
     }
 
+    const handAn = (id:any) => {
+        
+    }
+    
     const columns: ColumnsType<DataType> = [
         {
             title: 'Tên sản phẩm',
@@ -97,7 +101,7 @@ const ListProduct = () => {
             onFilter: (value, record: any) => {
                 console.log(record.categories);
                 console.log(value);
-
+ 
                 return record.categories == value
             }
         },
@@ -118,8 +122,9 @@ const ListProduct = () => {
                         <Link to={`/admin/product/edit/${record.id}`} >
                             <span className="text-white">Sửa</span>
                         </Link>
-                    </Button>
 
+                    </Button>
+                   
                     <Popconfirm
                         placement="topRight"
                         title="Bạn Có Muốn Xóa?"

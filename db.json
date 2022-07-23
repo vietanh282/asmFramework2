@@ -2,26 +2,6 @@
   "users": [],
   "products": [
     {
-      "name": "thêm mới update",
-      "originalPrice": 123456,
-      "saleOffPrice": 12345,
-      "categories": "phone",
-      "feature": "yyyyyyyyy",
-      "description": "yyyyyyyy",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658396394/anhhtus/bzlnnd9vpafzmcbi5rh2.gif",
-      "id": 19
-    },
-    {
-      "name": "ông cháu",
-      "originalPrice": 9999999999999,
-      "saleOffPrice": 888888888888,
-      "categories": "laptop",
-      "feature": "bvbvbvvbbb",
-      "description": "bvbvbbbbvb",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658333031/anhhtus/zsg2wlajxszghjq22ngu.gif",
-      "id": 20
-    },
-    {
       "name": "ASUS ROG Phone 5S 16GB 512GB",
       "originalPrice": 19490,
       "saleOffPrice": 10,
@@ -30,16 +10,6 @@
       "description": "Smartphone gaming của Asus còn được trang bị 2 màn hình ấn tượng với màn hình chính 6.78 inches, tấm nền AMOLED tần số quét 144Hz cho khả năng hiển thị màu sắc rực rỡ. Ngoài ra màn hình phụ nhằm hiển thị thêm một số thông tin và thông báo tin nhắn...",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658362941/anhhtus/yiyppweddkixcf590tdi.jpg",
       "id": 21
-    },
-    {
-      "name": "Realme 8 5G",
-      "originalPrice": 69999,
-      "saleOffPrice": 5678,
-      "categories": "phone",
-      "feature": "dẹp",
-      "description": "rẻ",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658363203/anhhtus/nxzntexshqpdqzzryepb.gif",
-      "id": 22
     },
     {
       "name": " lamborghini",
@@ -70,6 +40,40 @@
       "description": "22222222222",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658396435/anhhtus/prwzgiwyagodvms1snxx.png",
       "id": 27
+    },
+    {
+      "name": " lamborghini",
+      "originalPrice": 6666,
+      "saleOffPrice": 555,
+      "categories": "laptop",
+      "feature": "ttttt",
+      "description": "rrrrrrrrrr",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658537546/anhhtus/rdpdljzdl2czw09p8bqn.png",
+      "id": 30
+    },
+    {
+      "name": "annhhupdate",
+      "originalPrice": 160000,
+      "saleOffPrice": 1999,
+      "categories": "laptop",
+      "feature": "đẹpupdate",
+      "description": "đẹpupdate",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658538054/anhhtus/ycnvh0i0ydqdy855sn7n.jpg",
+      "id": 31
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "phone"
+    },
+    {
+      "id": 1,
+      "name": "laptop"
+    },
+    {
+      "id":1,
+      "name":"tablet"
     }
   ]
 }

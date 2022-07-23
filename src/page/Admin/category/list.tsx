@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
-import { Typography, Button, Table } from 'antd';
+import { Typography, Button, Table, Space, Popconfirm, message } from 'antd';
 import { Link } from 'react-router-dom'
 import { SearchOutlined, PlusOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
 
 import { listProduct } from '../../../api/product';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
-// import { useQuery } from 'react-query'
+import { listCate } from '../../../api/category';
 const { Paragraph } = Typography
 
 
@@ -18,39 +18,6 @@ interface DataType {
     description: string;
 }
 
-const columns: ColumnsType<DataType> = [
-    {
-        title: 'Tên sản phẩm',
-        dataIndex: 'name',
-        key: 'name',
-        render: text => <a>{text}</a>,
-    },
-    {
-        title: 'Đặc điểm',
-        dataIndex: 'feature',
-        key: 'feature',
-        // filters: (text:any) => <a>{text}</a>,
-        // onFilter:(value, recore) => {
-        //     return recore == value
-        // }
-    },
-    {
-        title: 'Loại hàng',
-        dataIndex: 'categories',
-        key: 'categories',
-        render: text => <a>{text}</a>,
-    },
-    {
-        title: 'Giá khuyến mãi',
-        dataIndex: 'saleOffPrice',
-        key: 'saleOffPrice',
-    },
-    {
-        title: 'Mô tả',
-        dataIndex: 'description',
-        key: 'description',
-    },
-];
 
 
 
@@ -58,11 +25,26 @@ const ListCategory = () => {
     const [dataTable, setDataTable] = useState([])
     // const [isLoading, setIsLoading] = useState(false)
     const queryClient = new QueryClient();
-
+    const [confirmLoading, setConfirmLoading] = useState(false);
     const fetchData =  async () => {
         const data = await listProduct()
         console.log(data)
         setDataTable(data.data)
+    }
+
+    const onRemoveCate = (id: any) => {
+        setConfirmLoading(true);
+        message.loading({ content: 'Loading...' });
+
+        setTimeout(() => {
+            
+            // remove(id);
+            setConfirmLoading(false);
+
+            message.success({ content: 'Xóa Thành Công!', duration: 2 });
+
+            // navigate("/admin")
+        }, 1000)
     }
 
     // fetchData()
@@ -70,9 +52,54 @@ const ListCategory = () => {
     
     }, [])
 
-    const {isLoading, data, error} = useQuery<any>(['Product'], listProduct)
+    const {isLoading, data, error} = useQuery<any>(['Product'], listCate)
     console.log(data);
     
+
+    const columns: ColumnsType<DataType> = [
+        {
+            title: 'STT',
+            dataIndex: 'id',
+            key: 'id',
+            render: text => <p>{text}</p>,
+        },
+        {
+            title: 'Tên sản phẩm',
+            dataIndex: 'name',
+            key: 'name',
+            render: text => <p>{text}</p>,
+        },
+       
+        {
+            title: "Hành Động", key: "action", render: (text, record: any) => (
+                <Space align="center" size="middle">
+                    <Button style={{ background: "#198754", color: "#fff" }} >
+                        <Link to={`/admin/product/edit/${record.id}`} >
+                            <span className="text-white">Sửa</span>
+                        </Link>
+    
+                    </Button>
+    
+                    <Popconfirm
+                        placement="topRight"
+                        title="Bạn Có Muốn Xóa?"
+                        okText="Có"
+                        cancelText="Không"
+                        onConfirm={() => { onRemoveCate(record.id) }}
+                        okButtonProps={{ loading: confirmLoading }}
+                    //   onCancel={handleCancel}
+                    >
+                        <Button type="primary" danger >
+                            Xóa
+                        </Button>
+                    </Popconfirm>
+    
+                </Space>
+            ),
+        }
+    ];
+
+
     return (
         <>
         
