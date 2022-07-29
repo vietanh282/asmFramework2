@@ -1,6 +1,5 @@
 import React from 'react'
-// import HeaderAdmin from '../admin/HeaderAdmin'
-// import SideBar from '../admin/SideBarAdmin'
+
 import { PhoneOutlined, LaptopOutlined, TabletFilled, AudioOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
@@ -10,13 +9,13 @@ import LogoImage from '../../asset/images/logo1.png'
 const { Header, Content, Sider } = Layout;
 
 const item3: MenuProps['items'] = [
-  { key: "cellphone", icon: <PhoneOutlined />, label: <Link to="/admin">Điện thoại</Link> },
-  { key: "laptop", icon: <LaptopOutlined />, label: "Laptop" },
-  { key: "tablet", icon: <TabletFilled />, label: "Máy tính bảng" },
-  { key: "audio", icon: <AudioOutlined />, label: "Âm thanh" },
+  // { key: "cellphone", icon: <PhoneOutlined />, label: <Link to="/admin">Điện thoại</Link> },
+  { key: "laptop", icon: <LaptopOutlined />, label: <Link to="/admin">Sản phẩm</Link>  },
+  // { key: "tablet", icon: <TabletFilled />, label: "Điện thoại" },
+  // { key: "audio", icon: <AudioOutlined />, label: "Âm thanh" },
   {
     key: "categories", icon: <SettingOutlined />,
-    label: <Link to="/admin/categories">Categories</Link>
+    label: <Link to="/admin/categories">Loại hàng</Link>
   },
 ]
 

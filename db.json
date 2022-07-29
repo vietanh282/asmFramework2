@@ -12,16 +12,6 @@
       "id": 21
     },
     {
-      "name": " lamborghini",
-      "originalPrice": 666666,
-      "saleOffPrice": 77777,
-      "categories": "tablet",
-      "feature": "xấy",
-      "description": "đẹp",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658365193/anhhtus/bwgrfxqck9krctlokfu0.gif",
-      "id": 23
-    },
-    {
       "name": "ASUS ROG Phone 5S 16GB 512GB",
       "originalPrice": 19400000,
       "saleOffPrice": 1600000,
@@ -32,26 +22,6 @@
       "id": 26
     },
     {
-      "name": "sản phẩm mới",
-      "originalPrice": 99999,
-      "saleOffPrice": 8888,
-      "categories": "laptop",
-      "feature": "1111111",
-      "description": "22222222222",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658396435/anhhtus/prwzgiwyagodvms1snxx.png",
-      "id": 27
-    },
-    {
-      "name": " lamborghini",
-      "originalPrice": 6666,
-      "saleOffPrice": 555,
-      "categories": "laptop",
-      "feature": "ttttt",
-      "description": "rrrrrrrrrr",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658537546/anhhtus/rdpdljzdl2czw09p8bqn.png",
-      "id": 30
-    },
-    {
       "name": "annhhupdate",
       "originalPrice": 160000,
       "saleOffPrice": 1999,
@@ -60,20 +30,30 @@
       "description": "đẹpupdate",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658538054/anhhtus/ycnvh0i0ydqdy855sn7n.jpg",
       "id": 31
+    },
+    {
+      "name": "Xiaomi Redmi Note 11",
+      "originalPrice": 4600000,
+      "saleOffPrice": 32000,
+      "categories": "phone",
+      "feature": "Nâng cao trải nghiệm thị giác - Màn hình AMOLED 6.43\"\" Full HD+, công nghệ DotDisplay\nHiệu năng ấn tượng - Snapdragon 680 8 nhân cùng RAM 4GB, bộ nhớ 64GB",
+      "description": "hoải mái sử dụng không lắng lo - Viên pin 5000 mAh, sạc nhanh 33 W",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658843989/anhhtus/y2rn0c9o1pr6ige9qpzk.png",
+      "id": 32
     }
   ],
   "categories": [
     {
-      "id": 1,
-      "name": "phone"
+      "name": "phone",
+      "id": 1
     },
     {
       "id": 1,
       "name": "laptop"
     },
     {
-      "id":1,
-      "name":"tablet"
+      "id": 1,
+      "name": "tablet"
     }
   ]
 }
