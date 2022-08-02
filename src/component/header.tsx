@@ -11,6 +11,7 @@ import logo from '../asset/images/logo1.png'
 import banner from '../asset/images/Rectangle.png'
 import { LaptopOutlined, MobileOutlined, TabletOutlined, DashboardOutlined, HomeOutlined, UsbOutlined, DesktopOutlined, VideoCameraOutlined, CrownOutlined, InsertRowLeftOutlined, InsertRowRightOutlined, LoadingOutlined } from "@ant-design/icons";
 import type { MenuProps } from 'antd';
+import { Link } from 'react-router-dom';
 const { Sider, Content } = Layout;
 type MenuItem = Required<MenuProps>['items'][number];
 function getItem(
@@ -39,9 +40,7 @@ const items = [
     getItem("Phụ kiện", "sub7", <UsbOutlined />, []),
     getItem("PC - Màn hình", "sub8", <DesktopOutlined />, []),
     getItem("Tivi", "sub9", <VideoCameraOutlined />, []),
-    getItem("Thu cũ", "sub10", <CrownOutlined />, []),
     getItem("Hàng cũ", "sub11", <InsertRowLeftOutlined />, []),
-    getItem("Khuyến mãi", "sub12", <InsertRowRightOutlined />, []),
     getItem("Tin công nghệ", "sub13", <LoadingOutlined />, []),
 ];
 
@@ -55,7 +54,8 @@ const Header = () => {
             <Row style={{ backgroundColor: "red" }}>
                 <Col span={8}>
                     <div className='' style={{ margin: "10px", marginRight: "auto", textAlign: "center" }}>
-                        <Logo width={"20px"} src={logo} />
+                        <Link to={'/'}><Logo style={{marginLeft:"300px"}} src={logo} /></Link>
+                 
                     </div>
                 </Col>
                 <Col span={8} style={{ margin: "auto 0" }} >
@@ -66,8 +66,11 @@ const Header = () => {
                         <Col style={{ fontSize: "14px", color:"white" }} span={6}><PhoneOutlined />Gọi mua hàng
                         1800.2097</Col>
                         <Col style={{ fontSize: "14px",color:"white" }} span={6}><FrownOutlined />Cửa hàng</Col>
-                        <Col style={{ fontSize: "14px",color:"white" }} span={6}> <RocketOutlined />Tra cứu đơn hàng</Col>
-                        <Col style={{ fontSize: "14px",color:"white" }} span={6}><ShoppingCartOutlined />Giỏ Hàng</Col>
+                        <Col style={{ fontSize: "14px",color:"white" }} span={6}> <RocketOutlined />Tra cứu</Col>
+                        <Link to={'/cart'} style={{color:"#fff"}}>
+                        <Col style={{ fontSize: "14px",color:"white" }} span={6}>Giỏ Hàng<ShoppingCartOutlined /></Col>
+                        </Link>
+                        
                     </Row>
                 </Col>
             </Row>

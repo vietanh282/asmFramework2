@@ -4,11 +4,11 @@
     {
       "name": "ASUS ROG Phone 5S 16GB 512GB",
       "originalPrice": 19490,
-      "saleOffPrice": 10,
+      "saleOffPrice": 15754,
       "categories": "phone",
       "feature": "Cấu hình khủng long, chiến mọi tựa game - Chip Snapdragon 888+ cực mạnh, hỗ trợ 5G",
       "description": "Smartphone gaming của Asus còn được trang bị 2 màn hình ấn tượng với màn hình chính 6.78 inches, tấm nền AMOLED tần số quét 144Hz cho khả năng hiển thị màu sắc rực rỡ. Ngoài ra màn hình phụ nhằm hiển thị thêm một số thông tin và thông báo tin nhắn...",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658362941/anhhtus/yiyppweddkixcf590tdi.jpg",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659103994/anhhtus/jrcp2mj1syfrlx5z3fzd.png",
       "id": 21
     },
     {
@@ -22,13 +22,13 @@
       "id": 26
     },
     {
-      "name": "annhhupdate",
-      "originalPrice": 160000,
-      "saleOffPrice": 1999,
-      "categories": "laptop",
-      "feature": "đẹpupdate",
-      "description": "đẹpupdate",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658538054/anhhtus/ycnvh0i0ydqdy855sn7n.jpg",
+      "name": "Realme 8 5G",
+      "originalPrice": 12634000,
+      "saleOffPrice": 11890000,
+      "categories": "phone",
+      "feature": "cấu hình mạnh thu hut khách hàng",
+      "description": "bộ nhớ dung lượng pin khủng phù hợp vs game thủ streamer",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104018/anhhtus/bfjkwmcnewylrfxu5gzd.png",
       "id": 31
     },
     {
@@ -40,6 +40,36 @@
       "description": "hoải mái sử dụng không lắng lo - Viên pin 5000 mAh, sạc nhanh 33 W",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658843989/anhhtus/y2rn0c9o1pr6ige9qpzk.png",
       "id": 32
+    },
+    {
+      "name": "Nubia Red Magic 7 Obsidian 12GB 128GB",
+      "originalPrice": 18990000,
+      "saleOffPrice": 17990000,
+      "categories": "phone",
+      "feature": "Sự kết hợp của Chip snapdragon 8 gen 1 và chip chơi game độc đáo\nNâng cấp hệ thống tản nhiệt, cải tiến mặt lưng và sạc siêu tốc",
+      "description": "ZTE Nubia Red Magic 7 - Thế hệ gaming phone mạnh mẽ và đẳng cấp",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104567/anhhtus/plu3egj1ppmogomxwoni.jpg",
+      "id": 33
+    },
+    {
+      "name": "Samsung S20Utra 5G",
+      "originalPrice": 54490000,
+      "saleOffPrice": 51290000,
+      "categories": "phone",
+      "feature": "Camera mắt thần bóng đêm Nightography - Chụp đêm cực đỉnh",
+      "description": "Dung lượng pin bất chấp ngày đêm - Viên pin 5000mAh, sạc nhanh 45W\nS Pen đầu tiên trên Galaxy S - Độ trễ thấp, dễ thao tác",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104783/anhhtus/hpzu6gzoywlyv66wr7cp.png",
+      "id": 34
+    },
+    {
+      "name": "Samsung Galaxy Z Flip 3 (5G)",
+      "originalPrice": 24900000,
+      "saleOffPrice": 16490000,
+      "categories": "phone",
+      "feature": "Hệ thống camera siêu ấn tượng - Bộ 3 ống kính camera 12MP, camera selfie sắc nét",
+      "description": "Hiệu năng ấn tượng, làm chủ tốc độ - Snapdragon 888 kết hợp RAM 8GB, hỗ trợ 5G",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104981/anhhtus/tq9i4dd8hq5g3wfovnsi.jpg",
+      "id": 35
     }
   ],
   "categories": [

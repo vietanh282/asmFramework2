@@ -1,10 +1,11 @@
 import { Card, List } from 'antd';
 import React from 'react'
 import styled from 'styled-components';
-
 import {StarOutlined, StarTwoTone} from '@ant-design/icons';
 import { useQuery } from '@tanstack/react-query';
 import { listProduct } from '../api/product';
+import { Link } from 'react-router-dom';
+import { currency } from '../helper/helper';
 type Props = {}
 
 const ListProduct = (props: Props) => {
@@ -29,18 +30,17 @@ const ListProduct = (props: Props) => {
                 dataSource={loadData}
                 renderItem={(item:any) => (
                     <List.Item>
-
                         <div>
                             <div style={{textAlign:"center"}}>
-                                <a href="" ><img  src={item.image} alt="" width={140} /></a>
+                            <Link to={`/detail/${item.id}`} ><img  src={item.image} alt="" width={140} /></Link>
                             </div>
-                            <p className="name" style={{marginTop:"10px"}}>{item.name}</p>
+                            <Link to={`/detail/${item.id}`} className="name" style={{marginTop:"10px", color:"black"}}>{item.name}</Link>
                             <div style={{display:"flex", justifyContent:"space-between"}}>
                                 <p style={{color:"red"}}>{item.saleOffPrice} ₫</p>
                                 <p style={{color:"gray", fontSize:"13px"}}>{item.originalPrice} ₫</p>
                             </div>
                             <Desc >
-                                <p>{item.description}</p>
+                                <p>{item.feature}</p>
                             </Desc>
                             <div style={{display:"flex", gap:"10px"}}>
                                 <div className="star">
