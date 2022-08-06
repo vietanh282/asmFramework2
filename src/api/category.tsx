@@ -24,3 +24,9 @@ export const getCatebyId:any = (id:any) => {
     const url = `/categories/${id}`;
     return instance.get(url);
 }   
+
+
+export const listCateDetailById:any = (id:number) => {
+    const url = `/detailCate?categories=${id}`;
+    return instance.get(url);
+}

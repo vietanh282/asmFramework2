@@ -9,7 +9,7 @@ import { RocketOutlined } from '@ant-design/icons';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import logo from '../asset/images/logo1.png'
 import banner from '../asset/images/Rectangle.png'
-import { LaptopOutlined, MobileOutlined, TabletOutlined, DashboardOutlined, HomeOutlined, UsbOutlined, DesktopOutlined, VideoCameraOutlined, CrownOutlined, InsertRowLeftOutlined, InsertRowRightOutlined, LoadingOutlined } from "@ant-design/icons";
+import { LaptopOutlined, MobileOutlined, TabletOutlined, DashboardOutlined,EnvironmentOutlined, HomeOutlined, UsbOutlined, DesktopOutlined, VideoCameraOutlined, CrownOutlined, InsertRowLeftOutlined, InsertRowRightOutlined, LoadingOutlined } from "@ant-design/icons";
 import type { MenuProps } from 'antd';
 import { Link } from 'react-router-dom';
 const { Sider, Content } = Layout;
@@ -38,10 +38,6 @@ const items = [
     getItem("Đồng hồ", "sub5", <DashboardOutlined />, []),
     getItem("Nhà thông minh", "sub6", <HomeOutlined />, []),
     getItem("Phụ kiện", "sub7", <UsbOutlined />, []),
-    getItem("PC - Màn hình", "sub8", <DesktopOutlined />, []),
-    getItem("Tivi", "sub9", <VideoCameraOutlined />, []),
-    getItem("Hàng cũ", "sub11", <InsertRowLeftOutlined />, []),
-    getItem("Tin công nghệ", "sub13", <LoadingOutlined />, []),
 ];
 
 const onClick: MenuProps['onClick'] = e => {
@@ -53,33 +49,31 @@ const Header = () => {
         <>
             <Row style={{ backgroundColor: "red" }}>
                 <Col span={8}>
-                    <div className='' style={{ margin: "10px", marginRight: "auto", textAlign: "center" }}>
-                        <Link to={'/'}><Logo style={{marginLeft:"300px"}} src={logo} /></Link>
-                 
+                    <div className='' style={{ margin: "10px", marginRight: "auto" }}>
+
+                        <Logo width={"20px"} src={logo} />
                     </div>
+
                 </Col>
-                <Col span={8} style={{ margin: "auto 0" }} >
-                    <Input size="large" placeholder="input ở đây" style={{ borderRadius: "30px" }} prefix={<SearchOutlined />} />
+                <Col span={8} style={{ margin: "auto" }}>
+                    <Input style={{ borderRadius: "10px" }} placeholder="Search" prefix={<SearchOutlined />} />
                 </Col>
-                <Col span={8} style={{ margin: "auto 0", textAlign: "center" }} >
-                    <Row>
-                        <Col style={{ fontSize: "14px", color:"white" }} span={6}><PhoneOutlined />Gọi mua hàng
-                        1800.2097</Col>
-                        <Col style={{ fontSize: "14px",color:"white" }} span={6}><FrownOutlined />Cửa hàng</Col>
-                        <Col style={{ fontSize: "14px",color:"white" }} span={6}> <RocketOutlined />Tra cứu</Col>
-                        <Link to={'/cart'} style={{color:"#fff"}}>
-                        <Col style={{ fontSize: "14px",color:"white" }} span={6}>Giỏ Hàng<ShoppingCartOutlined /></Col>
-                        </Link>
-                        
+                <Col span={8}>
+                    <Row style={{ margin: "10px" }}>
+                        <Col span={6} style={{ color: "white" }}>Gọi mua hàng <br />1800.2097</Col>
+                        <Col span={6} style={{ color: "white" }}><EnvironmentOutlined />Cửa hàng <br /> gần bạn</Col>
+                        <Col span={6} style={{ color: "white" }}><RocketOutlined />Tra cứu <br /> đơn hàng</Col>
+                        <Link to={'/cart'}><Col span={4} style={{ color: "white" }}><ShoppingCartOutlined />Giỏ hàng</Col></Link>
+                    
                     </Row>
                 </Col>
             </Row>
             <Layout>
-                <Layout style={{backgroundColor:"white"}}>
+                <Layout style={{ backgroundColor: "white" }}>
                     <Sider style={{
-                        marginTop: "30px", marginLeft: "150px"
+                        marginTop: "30px", marginLeft: "150px",backgroundColor: "white"
                     }}>
-                        <Menu
+                        <Menu 
                             onClick={onClick}
                             style={{
                                 width: "250"

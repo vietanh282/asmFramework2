@@ -10,6 +10,16 @@ const CartPage = () => {
   const { items, cartTotal, updateItemQuantity, removeItem } = useCart();
   console.log(items);
 
+  const deleteToCart = (item:any) => {
+    Modal.confirm({
+      title:"Bạn có chắc muốn xóa sản phẩm này không ?",
+      onOk: () => {
+        updateItemQuantity(item.id, Number(item.quantity - item.quantity) )
+      },
+
+      
+     })
+  }
   const minus = (item:any) => {
     if (item.quantity == 1) {
       Modal.confirm({
@@ -17,7 +27,7 @@ const CartPage = () => {
         onOk: () => {
           updateItemQuantity(item.id, Number(item.quantity) - 1)
         },
-        
+
         
        })
     }else{
@@ -61,7 +71,7 @@ const CartPage = () => {
                 <p>{item.description}</p>
                 {/* <p>Ưu đãi Galaxy gift lên đến 1.700.000đ (VieON VIP HBO GO, Zing MP3, Phúc Long, Galaxy Play)</p> */}
               </KhuyenMai>
-              <Delete ><CloseSquareFilled /></Delete>
+              <Delete ><CloseSquareFilled onClick={() => deleteToCart(item)}/></Delete>
             </div>
           </Row>
         ))}
@@ -111,12 +121,14 @@ const Delete = styled.span`
     transform: rotate(180deg);
     transition: all ease-in-out 0.2s;
   }
+
 `
 const Image = styled.img`
   width: 200px;
   margin: auto;
   text-align: center;
   max-width: 100%;
+
 `
 const KhuyenMai = styled.div`
   background-color: #F6F6F6;
@@ -130,6 +142,7 @@ const NameProduct = styled.p`
   /* line-height: 10px; */
   padding: 0;
   margin: 0;
+
 `
 const SoLuong = styled.div`
    display: flex;

@@ -10,7 +10,7 @@ import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-quer
 import { listCate, removeCate } from '../../../api/category';
 import type { TableColumnsType } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { getListCatePhone } from '../../../features/Slide/categoryPhone/catePhone';
+import { getListCatePhone, getListCatePhuKien } from '../../../features/Slide/categoryPhone/catePhone';
 import { getListProductById } from '../../../features/Slide/product/product';
 // import { useQuery } from 'react-query'
 const { Paragraph } = Typography
@@ -31,18 +31,17 @@ interface ExpandedDataType {
 
 
 
-const ListCategory = () => {
+const ListPhuKien = () => {
     const [dataTable, setDataTable] = useState([])
     // const [isLoading, setIsLoading] = useState(false)
     const queryClient = new QueryClient();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [confirmLoading, setConfirmLoading] = useState(false);
-    const catedienThoaigories = useSelector((item: any) => item.categoryPhone.value);
+    const listCatePhuKien = useSelector((item: any) => item.categoryPhone.value);
 
     const category = useSelector((item:any) => item.category.value)
     const product = useSelector((item: any) => item.product.value);
-    console.log(catedienThoaigories);
     const onRemoveCate = async (id: any) => {
         setConfirmLoading(true);
         message.loading({ content: 'Loading...' });
@@ -61,8 +60,8 @@ const ListCategory = () => {
 
     // fetchData()
     useEffect(() => {
-        dispatch(getListCatePhone(1))
-        dispatch(getListProductById(1))
+        dispatch(getListCatePhuKien(2))
+        dispatch(getListProductById(2))
     }, [])
 
     console.log(product);
@@ -222,7 +221,7 @@ const ListCategory = () => {
             <Table
                 expandable={{ expandedRowRender, defaultExpandedRowKeys: ['0'] }}
                 columns={columns}
-                dataSource={catedienThoaigories} />
+                dataSource={listCatePhuKien} />
 
         </>
     )
@@ -233,4 +232,4 @@ const Breadcrumb = styled.div`
     justify-content: space-between;
     margin-top: 20px;
 `
-export default ListCategory
+export default ListPhuKien

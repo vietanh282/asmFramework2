@@ -1,11 +1,19 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "anhnvph14082@fpt.edu.vn",
+      "password": "$2a$10$eDIV3aurgWxwblQMIzPBquBjGnqXnpWhI2nJ/nggjlR6rQRVCI2sC",
+      "phone": "0972840223",
+      "id": 1
+    }
+  ],
   "products": [
     {
       "name": "ASUS ROG Phone 5S 16GB 512GB",
       "originalPrice": 19490,
       "saleOffPrice": 15754,
-      "categories": "phone",
+      "categories": 1,
+      "detailCate": 1,
       "feature": "Cấu hình khủng long, chiến mọi tựa game - Chip Snapdragon 888+ cực mạnh, hỗ trợ 5G",
       "description": "Smartphone gaming của Asus còn được trang bị 2 màn hình ấn tượng với màn hình chính 6.78 inches, tấm nền AMOLED tần số quét 144Hz cho khả năng hiển thị màu sắc rực rỡ. Ngoài ra màn hình phụ nhằm hiển thị thêm một số thông tin và thông báo tin nhắn...",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659103994/anhhtus/jrcp2mj1syfrlx5z3fzd.png",
@@ -15,7 +23,8 @@
       "name": "ASUS ROG Phone 5S 16GB 512GB",
       "originalPrice": 19400000,
       "saleOffPrice": 1600000,
-      "categories": "phone",
+      "categories": 1,
+      "detailCate": 1,
       "feature": "Pin khủng, sủ dụng cực lâu - Viên pin lớn 6000mAh, sạc nhanh 65W",
       "description": "Bắt trọn mọi khoảnh khắc - Cụm 3 camera sau lên đến 64MP, hỗ trợ quay phim 8K cực đỉnh ",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658366913/anhhtus/ekllf2og10xlos8rqe7s.png",
@@ -25,7 +34,8 @@
       "name": "Realme 8 5G",
       "originalPrice": 12634000,
       "saleOffPrice": 11890000,
-      "categories": "phone",
+      "categories": 1,
+      "detailCate": 1,
       "feature": "cấu hình mạnh thu hut khách hàng",
       "description": "bộ nhớ dung lượng pin khủng phù hợp vs game thủ streamer",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104018/anhhtus/bfjkwmcnewylrfxu5gzd.png",
@@ -35,7 +45,8 @@
       "name": "Xiaomi Redmi Note 11",
       "originalPrice": 4600000,
       "saleOffPrice": 32000,
-      "categories": "phone",
+      "categories": 1,
+      "detailCate": 1,
       "feature": "Nâng cao trải nghiệm thị giác - Màn hình AMOLED 6.43\"\" Full HD+, công nghệ DotDisplay\nHiệu năng ấn tượng - Snapdragon 680 8 nhân cùng RAM 4GB, bộ nhớ 64GB",
       "description": "hoải mái sử dụng không lắng lo - Viên pin 5000 mAh, sạc nhanh 33 W",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658843989/anhhtus/y2rn0c9o1pr6ige9qpzk.png",
@@ -45,7 +56,8 @@
       "name": "Nubia Red Magic 7 Obsidian 12GB 128GB",
       "originalPrice": 18990000,
       "saleOffPrice": 17990000,
-      "categories": "phone",
+      "categories": 1,
+      "detailCate": 1,
       "feature": "Sự kết hợp của Chip snapdragon 8 gen 1 và chip chơi game độc đáo\nNâng cấp hệ thống tản nhiệt, cải tiến mặt lưng và sạc siêu tốc",
       "description": "ZTE Nubia Red Magic 7 - Thế hệ gaming phone mạnh mẽ và đẳng cấp",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104567/anhhtus/plu3egj1ppmogomxwoni.jpg",
@@ -55,7 +67,8 @@
       "name": "Samsung S20Utra 5G",
       "originalPrice": 54490000,
       "saleOffPrice": 51290000,
-      "categories": "phone",
+      "categories": 1,
+      "detailCate": 1,
       "feature": "Camera mắt thần bóng đêm Nightography - Chụp đêm cực đỉnh",
       "description": "Dung lượng pin bất chấp ngày đêm - Viên pin 5000mAh, sạc nhanh 45W\nS Pen đầu tiên trên Galaxy S - Độ trễ thấp, dễ thao tác",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104783/anhhtus/hpzu6gzoywlyv66wr7cp.png",
@@ -65,25 +78,84 @@
       "name": "Samsung Galaxy Z Flip 3 (5G)",
       "originalPrice": 24900000,
       "saleOffPrice": 16490000,
-      "categories": "phone",
+      "categories": 1,
+      "detailCate": 1,
       "feature": "Hệ thống camera siêu ấn tượng - Bộ 3 ống kính camera 12MP, camera selfie sắc nét",
       "description": "Hiệu năng ấn tượng, làm chủ tốc độ - Snapdragon 888 kết hợp RAM 8GB, hỗ trợ 5G",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104981/anhhtus/tq9i4dd8hq5g3wfovnsi.jpg",
       "id": 35
+    },
+    {
+      "name": "Chân sạc Type C chính hãng",
+      "originalPrice": 2900000,
+      "saleOffPrice": 1000000,
+      "categories": 3,
+      "detailCate": 7,
+      "feature": "ngon bổ rẻ",
+      "description": "chắc chẳn bảo hành 10 ngày",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659794963/anhhtus/hwg5rvea2jswljmoizpv.jpg",
+      "id": 36
     }
   ],
   "categories": [
     {
-      "name": "phone",
-      "id": 1
+      "name": "Điện thoại",
+      "id": 1,
+      "key": "1"
     },
     {
-      "id": 1,
-      "name": "laptop"
+      "name": "Phụ kiện",
+      "id": 2,
+      "key": "2"
     },
     {
+      "name": "Linh kiện",
+      "id": 3,
+      "key": "3"
+    }
+  ],
+  "detailCate": [
+    {
+      "name": "Iphone",
       "id": 1,
-      "name": "tablet"
+      "key": "1",
+      "categories": 1
+    },
+    {
+      "name": "Samsung",
+      "id": 2,
+      "key": "2",
+      "categories": 1
+    },
+    {
+      "name": "Xiaomi",
+      "id": 3,
+      "key": "3",
+      "categories": 1
+    },
+    {
+      "name": "Phụ kiện Apple",
+      "id": 4,
+      "key": "4",
+      "categories": 2
+    },
+    {
+      "name": "Dán màn hình",
+      "id": 5,
+      "key": "5",
+      "categories": 2
+    },
+    {
+      "name": "Ốp lưng - Bao da",
+      "id": 6,
+      "key": "6",
+      "categories": 2
+    },
+    {
+      "name": "Chân sạc Type C",
+      "id": 7,
+      "key": "3",
+      "categories": 3
     }
   ]
 }

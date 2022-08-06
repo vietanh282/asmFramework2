@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { PhoneOutlined, LaptopOutlined, TabletFilled, AudioOutlined, SettingOutlined } from '@ant-design/icons';
+import { MailOutlined, LaptopOutlined, AndroidFilled, UnorderedListOutlined, CustomerServiceFilled, ApiFilled} from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import { Link, Outlet } from 'react-router-dom';
@@ -8,18 +8,50 @@ import styled from 'styled-components';
 import LogoImage from '../../asset/images/logo1.png'
 const { Header, Content, Sider } = Layout;
 
-const item3: MenuProps['items'] = [
-  // { key: "cellphone", icon: <PhoneOutlined />, label: <Link to="/admin">Điện thoại</Link> },
-  { key: "laptop", icon: <LaptopOutlined />, label: <Link to="/admin">Sản phẩm</Link>  },
-  // { key: "tablet", icon: <TabletFilled />, label: "Điện thoại" },
-  // { key: "audio", icon: <AudioOutlined />, label: "Âm thanh" },
-  {
-    key: "categories", icon: <SettingOutlined />,
-    label: <Link to="/admin/categories">Loại hàng</Link>
-  },
-]
+type MenuItem = Required<MenuProps>['items'][number];
 
+function getItem(
+  label: React.ReactNode,
+  key: React.Key,
+  icon?: React.ReactNode,
+  children?: MenuItem[],
+  type?: 'group',
+): MenuItem {
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type,
+  } as MenuItem;
+}
+
+const items: MenuItem[] = [
+  getItem('Sản phẩm', 'sub1', <AndroidFilled />, [
+    getItem(<Link to="/admin/product">Danh sách</Link>, '1', <UnorderedListOutlined />),
+
+
+  ]),
+  getItem('Loại hàng', 'sub2', <MailOutlined />, [
+    getItem( <Link to="/admin/categories/phone">Điện thoại</Link>, '5', <LaptopOutlined/>),
+    getItem(<Link to="/admin/categories/phuKien">Phụ kiện</Link>, '2', <CustomerServiceFilled />),
+    getItem(<Link to="/admin/categories/linhKien">Linh kiện</Link>, '3', <ApiFilled />),
+  ]),
+ 
+];
+const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 const AdminLayout = () => {
+
+  const [openKeys, setOpenKeys] = useState(['sub1']);
+
+  const onOpenChange: MenuProps['onOpenChange'] = keys => {
+    const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1);
+    if (rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
+      setOpenKeys(keys);
+    } else {
+      setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+    }
+  }
   return (
     <div>
          <Layout>
@@ -37,7 +69,7 @@ const AdminLayout = () => {
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}
           style={{ height: '100%', borderRight: 0 }}
-          items={item3}
+          items={items}
         />
       </Sider>
       <Layout style={{ padding: '0 24px 24px' }}>

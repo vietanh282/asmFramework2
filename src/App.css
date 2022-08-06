@@ -6,5 +6,4 @@ height: 57px;
 .hh{
     display: flex;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-
 }

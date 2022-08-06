@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { add } from '../../../api/product';
 import UploadImage from '../../../component/Product/UploadImage';
 import { listCate } from '../../../api/category';
+import { useDispatch, useSelector } from 'react-redux';
+import { getListCateDetailById } from '../../../features/Slide/categoryPhone/catePhone';
 
 const { TextArea } = Input
 const { Option } = Select;
@@ -13,6 +15,8 @@ const AddProduct = () => {
 	const [image, setUploadedImage] = React.useState('')
 	const [category, setCategory] = useState([])
 	const navigate = useNavigate()
+	const dispatch = useDispatch();
+	const [listCateDetail, setListCateDetail] = useState([])
 	const onHandleAdd = (image: any) => {
 		// console.log(image);
 		setUploadedImage(image.img)
@@ -20,14 +24,21 @@ const AddProduct = () => {
 	}
 
 	useEffect(() => {
-		const listcategory = async () => {
-			const { data } = await listCate();
-			console.log(data);
+        const listcategory = async () => {
+            const { data } = await listCate();
+            // console.log(data);
 
-			setCategory(data)
-		}
-		listcategory();
-	}, [])
+            setCategory(data)
+        }
+        listcategory();
+		
+    }, [])
+
+	const handlerChangeCate = async (e:any) => {
+		console.log(e);
+		const {payload} = await dispatch(getListCateDetailById(Number(e)))
+		setListCateDetail(payload)
+	}
 	const onFinish = async (values: any) => {
 		console.log('Success:', values);
 		console.log(image);
@@ -38,12 +49,12 @@ const AddProduct = () => {
 			if (Number(values.saleOffPrice) > Number(values.originalPrice)) {
 				// values.saleOffPrice = "Mã giảm giá quá lớn"
 				message.error("Giá giảm không được > giá cũ")
-
+				
 
 
 			} else if (!image) {
 				message.error("Bạn chưa chọn ảnh")
-			} else {
+			} else{
 				const data = await add({ ...values, image })
 				// console.log(data);
 
@@ -116,22 +127,35 @@ const AddProduct = () => {
 
 								</Form.Item>
 							</Col>
-							< Col span={12} >
+
+							<Col span={12}>
 								<Form.Item
 									label="Phân loại"
 									name="categories"
 									rules={[{ required: true }]}
 								>
-									<Select style={{ width: '100%' }} size="large">
-										<Option value="phone">Điện thoại</Option>
-										<Option value="laptop">Laptop</Option>
-										<Option value="accessories" disabled>
-											Phụ kiện
-										</Option>
-										<Option value="tablet">Máy tính bảng</Option>
+									<Select style={{ width: '100%' }} size="large"  onChange={(e) => handlerChangeCate(e)}>
+										{category.map((item:any, index) => (
+											<Option value={item.id} key={index + 1}>{item.name}</Option>
+										))}
 									</Select>
 								</Form.Item>
-							</Col >
+							</Col>
+							{listCateDetail != [] ?
+								<Col span={12}>
+								<Form.Item
+									label="Dòng sản phẩm"
+									name="detailCate"
+									rules={[{ required: true }]}
+								>
+									<Select style={{ width: '100%' }} size="large"  >
+										{listCateDetail.map((item:any, index) => (
+											<Option value={item.id} key={index + 1}>{item.name}</Option>
+										))}
+									</Select>
+								</Form.Item>
+							</Col>
+							: ""}
 						</Row>
 
 						<Form.Item

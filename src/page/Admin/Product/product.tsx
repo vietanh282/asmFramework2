@@ -6,10 +6,9 @@ import { SearchOutlined, PlusOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
 
 import { listProduct, removeProduct } from '../../../api/product';
-import {  useQuery } from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
 import { listCate } from '../../../api/category';
 
-// import { useQuery } from 'react-query'
 const { Paragraph } = Typography
 
 
@@ -71,6 +70,7 @@ const ListProduct = () => {
     }
     
     const columns: ColumnsType<DataType> = [
+       
         {
             title: 'Tên sản phẩm',
             dataIndex: 'name',
@@ -89,7 +89,7 @@ const ListProduct = () => {
             title: 'Đặc điểm',
             dataIndex: 'feature',
             key: 'feature',
-            render: text => <a>{text}</a>,
+            render: text => <p>{text}</p>,
 
 
         },
@@ -97,7 +97,7 @@ const ListProduct = () => {
             title: 'Loại hàng',
             dataIndex: 'categories',
             key: 'categories',
-            filters: category.map((item: any) => { return { text: item.name, value: item.name } }),
+            filters: category.map((item: any) => { return { text: item.name, value: item.id } }),
             onFilter: (value, record: any) => {
                 console.log(record.categories);
                 console.log(value);

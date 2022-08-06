@@ -9,6 +9,7 @@
     "server": "json-server-auth db.json --port 3001"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.7",
     "@reduxjs/toolkit": "^1.8.3",
     "@tanstack/react-query": "^4.0.5",
     "@types/styled-components": "^5.1.25",
@@ -27,7 +28,8 @@
     "redux-store": "^0.0.0",
     "styled-components": "^5.3.5",
     "swr": "^1.3.0",
-    "use-query": "^1.0.2"
+    "use-query": "^1.0.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
