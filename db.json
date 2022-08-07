@@ -9,92 +9,202 @@
   ],
   "products": [
     {
-      "name": "ASUS ROG Phone 5S 16GB 512GB",
-      "originalPrice": 19490,
-      "saleOffPrice": 15754,
+      "name": "Iphone SX Mã Gold",
+      "originalPrice": 22900000,
+      "saleOffPrice": 18000000,
       "categories": 1,
       "detailCate": 1,
-      "feature": "Cấu hình khủng long, chiến mọi tựa game - Chip Snapdragon 888+ cực mạnh, hỗ trợ 5G",
-      "description": "Smartphone gaming của Asus còn được trang bị 2 màn hình ấn tượng với màn hình chính 6.78 inches, tấm nền AMOLED tần số quét 144Hz cho khả năng hiển thị màu sắc rực rỡ. Ngoài ra màn hình phụ nhằm hiển thị thêm một số thông tin và thông báo tin nhắn...",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659103994/anhhtus/jrcp2mj1syfrlx5z3fzd.png",
-      "id": 21
+      "feature": "iPhone Xs 64GB vẫn áp dụng nguyên tắc thiết kế quen thuộc với phần khung được làm từ thép không gỉ. Hai mặt trước sau được ốp kính cường lực thế hệ mới nhằm giúp giảm thiểu tối đa thiệt hại khi va đập. Các chi tiết nhỏ đạt độ hoàn thiện cao, được thiết kế tỉ mỉ.",
+      "description": "Hoàn toàn xứng đáng với những gì được mong chờ, phiên bản cao cấp nhất iPhone Xs Max 64 GB của Apple năm nay nổi bật với chip A12 Bionic mạnh mẽ, màn hình rộng đến 6.5 inch, cùng camera kép trí tuệ nhân tạo và Face ID được nâng cấp.",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659857714/anhhtus/wh5jjgpnhicpkffnipub.jpg",
+      "id": 1
     },
     {
-      "name": "ASUS ROG Phone 5S 16GB 512GB",
-      "originalPrice": 19400000,
-      "saleOffPrice": 1600000,
-      "categories": 1,
-      "detailCate": 1,
-      "feature": "Pin khủng, sủ dụng cực lâu - Viên pin lớn 6000mAh, sạc nhanh 65W",
-      "description": "Bắt trọn mọi khoảnh khắc - Cụm 3 camera sau lên đến 64MP, hỗ trợ quay phim 8K cực đỉnh ",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658366913/anhhtus/ekllf2og10xlos8rqe7s.png",
-      "id": 26
+      "name": "SSD 1TB Kingston",
+      "originalPrice": 3890000,
+      "saleOffPrice": 2800000,
+      "categories": 3,
+      "detailCate": 7,
+      "feature": "Chuẩn SSD: M.2 NVMe Gen3 x4\nTốc độ đọc: 2100 MB/s",
+      "description": "Tốc độ ghi: 1100 MB/s\nBảo hành chính hãng 3 năm 1 đổi 1",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858037/anhhtus/zzldlcylzqtt9vhcl9vr.jpg",
+      "id": 2
     },
     {
-      "name": "Realme 8 5G",
-      "originalPrice": 12634000,
-      "saleOffPrice": 11890000,
-      "categories": 1,
-      "detailCate": 1,
-      "feature": "cấu hình mạnh thu hut khách hàng",
-      "description": "bộ nhớ dung lượng pin khủng phù hợp vs game thủ streamer",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104018/anhhtus/bfjkwmcnewylrfxu5gzd.png",
-      "id": 31
+      "name": "Cáp sạc Lightning ",
+      "originalPrice": 380000,
+      "saleOffPrice": 320000,
+      "categories": 2,
+      "detailCate": 4,
+      "feature": "Cổng kết nối Lightning đạt chứng nhận MFI từ Apple\nThiết kế đảm bảo tốc độ kết nối nhanh và hiệu suất cao có thể khi kết nối các thiết bị Apple",
+      "description": "Đầu cáp được thiết kế chắc chắn với lớp kim loại, dây cáp được bao bọc bởi lớp vải Nylon bện chặt hình xương cá bên ngoài giúp cho sợi cáp chắc chắn, bền bỉ & chống mài mòn theo thời gian\nHỗ trợ sạc và truyền tải dữ liệu tốc độ cao cùng hiệu suất vượt trội, tương thích mọi thiết bị.",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858107/anhhtus/cyfzk4ilwgyww786cv2v.jpg",
+      "id": 3
     },
     {
-      "name": "Xiaomi Redmi Note 11",
-      "originalPrice": 4600000,
-      "saleOffPrice": 32000,
+      "name": "Iphone 12 Pro",
+      "originalPrice": 26990000,
+      "saleOffPrice": 24990000,
       "categories": 1,
       "detailCate": 1,
-      "feature": "Nâng cao trải nghiệm thị giác - Màn hình AMOLED 6.43\"\" Full HD+, công nghệ DotDisplay\nHiệu năng ấn tượng - Snapdragon 680 8 nhân cùng RAM 4GB, bộ nhớ 64GB",
-      "description": "hoải mái sử dụng không lắng lo - Viên pin 5000 mAh, sạc nhanh 33 W",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658843989/anhhtus/y2rn0c9o1pr6ige9qpzk.png",
-      "id": 32
+      "feature": "Mạnh mẽ, siêu nhanh với chip A14, RAM 6GB, mạng 5G tốc độ cao\nRực rỡ, sắc nét, độ sáng cao - Màn hình OLED cao cấp, Super Retina XDR hỗ trợ HDR10, Dolby Vision",
+      "description": "Chụp ảnh siêu đỉnh - Night Mode , thuật toán Deep Fusion, Smart HDR 3, camera LiDar\nBền bỉ vượt trội - Kháng nước, kháng bụi IP68, mặt lưng Ceramic Shield",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858172/anhhtus/abx3x0kqpws2zemsmxb9.jpg",
+      "id": 4
     },
     {
-      "name": "Nubia Red Magic 7 Obsidian 12GB 128GB",
-      "originalPrice": 18990000,
-      "saleOffPrice": 17990000,
+      "name": "Iphone 11 Pro",
+      "originalPrice": 14990000,
+      "saleOffPrice": 10790000,
       "categories": 1,
       "detailCate": 1,
-      "feature": "Sự kết hợp của Chip snapdragon 8 gen 1 và chip chơi game độc đáo\nNâng cấp hệ thống tản nhiệt, cải tiến mặt lưng và sạc siêu tốc",
-      "description": "ZTE Nubia Red Magic 7 - Thế hệ gaming phone mạnh mẽ và đẳng cấp",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104567/anhhtus/plu3egj1ppmogomxwoni.jpg",
-      "id": 33
+      "feature": "Màu sắc phù hợp cá tính - 6 màu sắc bắt mắt để lựa chọn\nHiệu năng mượt mà, ổn định - Chip A13, RAM 4GB",
+      "description": "Bắt trọn khung hình - Camera kép hỗ trợ góc rộng, chế độ Night Mode\nYên tâm sử dụng - Kháng nước, kháng bụi IP68, kính cường lực Gorilla",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858230/anhhtus/ekeiydbgmel2ei9d077r.jpg",
+      "id": 5
     },
     {
-      "name": "Samsung S20Utra 5G",
-      "originalPrice": 54490000,
-      "saleOffPrice": 51290000,
+      "name": "Iphone 12 green",
+      "originalPrice": 19990000,
+      "saleOffPrice": 1599000,
       "categories": 1,
       "detailCate": 1,
-      "feature": "Camera mắt thần bóng đêm Nightography - Chụp đêm cực đỉnh",
-      "description": "Dung lượng pin bất chấp ngày đêm - Viên pin 5000mAh, sạc nhanh 45W\nS Pen đầu tiên trên Galaxy S - Độ trễ thấp, dễ thao tác",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104783/anhhtus/hpzu6gzoywlyv66wr7cp.png",
-      "id": 34
+      "feature": "Mạnh mẽ, siêu nhanh với chip A14, RAM 4GB, mạng 5G tốc độ cao\nRực rỡ, sắc nét, độ sáng cao - Màn hình OLED cao cấp, Super Retina XDR hỗ trợ HDR10, Dolby Vision",
+      "description": "Chụp đêm ấn tượng - Night Mode cho 2 camera, thuật toán Deep Fusion, Smart HDR 3\nBền bỉ vượt trội - Kháng nước, kháng bụi IP68, mặt lưng Ceramic Shield",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858290/anhhtus/otnubxk76y0zhct3mfuc.jpg",
+      "id": 6
+    },
+    {
+      "name": "Nokia 3310",
+      "originalPrice": 600000,
+      "saleOffPrice": 300000,
+      "categories": 1,
+      "detailCate": 1,
+      "feature": "chắc cứng và bền",
+      "description": "có thể dùng làm tường thay gạch",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858351/anhhtus/xy7rbsqydk9jtnk4xjbv.jpg",
+      "id": 7
+    },
+    {
+      "name": "nubia red magic7",
+      "originalPrice": 24990000,
+      "saleOffPrice": 22990000,
+      "categories": 1,
+      "detailCate": 5,
+      "feature": "Trải nghiệm chơi game cực đã và mượt mà với màn hình AMOLED 6.8 inches, Full HD, 165hz\nNâng cấp hệ thống tản nhiệt, cải tiến mặt lưng giúp làm mát nhanh chóng và ổn định",
+      "description": "Chiến game đỉnh cao, hiệu năng cực khủng - Chip Snapdragon 8 Gen 1 mạnh mẽ cùng RAM 18GB\nThiết kế hầm hồ và độc đáo dành riêng cho các game thủ cá tính",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858426/anhhtus/jzgbe7owm2gda1zkg1ej.jpg",
+      "id": 8
     },
     {
       "name": "Samsung Galaxy Z Flip 3 (5G)",
-      "originalPrice": 24900000,
-      "saleOffPrice": 16490000,
+      "originalPrice": 26990000,
+      "saleOffPrice": 17490000,
       "categories": 1,
-      "detailCate": 1,
-      "feature": "Hệ thống camera siêu ấn tượng - Bộ 3 ống kính camera 12MP, camera selfie sắc nét",
-      "description": "Hiệu năng ấn tượng, làm chủ tốc độ - Snapdragon 888 kết hợp RAM 8GB, hỗ trợ 5G",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659104981/anhhtus/tq9i4dd8hq5g3wfovnsi.jpg",
-      "id": 35
+      "detailCate": 2,
+      "feature": "Thiết kế độc đáo tiện lợi, khẳng định đẳng cấp - Thiết kế gập mở vỏ sò, khung nhôm aluminum chắc chắn\nMàn hình kép ấn tượng - Màn hình chính: 6.7\", màn hình phụ: 1.9\" AMOLED",
+      "description": "Hệ thống camera siêu ấn tượng - Bộ 3 ống kính camera 12MP, camera selfie sắc nét\nHiệu năng ấn tượng, làm chủ tốc độ - Snapdragon 888 kết hợp RAM 8GB, hỗ trợ 5G",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858503/anhhtus/xlpcpv50flj2yccr2wg6.jpg",
+      "id": 9
     },
     {
       "name": "Chân sạc Type C chính hãng",
-      "originalPrice": 2900000,
-      "saleOffPrice": 1000000,
+      "originalPrice": 290000,
+      "saleOffPrice": 190000,
       "categories": 3,
       "detailCate": 7,
-      "feature": "ngon bổ rẻ",
-      "description": "chắc chẳn bảo hành 10 ngày",
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659794963/anhhtus/hwg5rvea2jswljmoizpv.jpg",
-      "id": 36
+      "feature": "bền ",
+      "description": "bảo hành 1 ngày",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858558/anhhtus/hmkggcchkyt8ilopq371.jpg",
+      "id": 10
+    },
+    {
+      "name": "Samsung S22Utra 5G",
+      "originalPrice": 3619000,
+      "saleOffPrice": 3199000,
+      "categories": 1,
+      "detailCate": 2,
+      "feature": "Vi xử lý mạnh mẽ nhất Galaxy - Snapdragon 8 Gen 1 (4 nm)\nCamera mắt thần bóng đêm Nightography - Chụp đêm cực đỉnh",
+      "description": "S Pen đầu tiên trên Galaxy S - Độ trễ thấp, dễ thao tác\nDung lượng pin bất chấp ngày đêm - Viên pin 5000mAh, sạc nhanh 45W",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858642/anhhtus/dfojhpvqq5ryrlqbabud.png",
+      "id": 11
+    },
+    {
+      "name": "Realme C25y",
+      "originalPrice": 4990000,
+      "saleOffPrice": 3890000,
+      "categories": 1,
+      "detailCate": 9,
+      "feature": "Đắm chìm mọi chi tiết - Màn hình notch thời thượng, 6.5 inches\nHiệu năng ổn định - Chip UNISOC T618 cùng RAM 4 GB cho đa nhiệm mượt mà",
+      "description": "Bắt trọn mọi chi tiết - Bộ 3 camera AI lên đến 50MP, camera selfie 8MP cảm biến cao cấp\nTrọn vẹn cả ngày dài - Viên pin lớn 5000mAh, sạc nhanh 18W",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659859207/anhhtus/yhbwha6ayngd7gk27l9a.jpg",
+      "id": 12
+    },
+    {
+      "name": "Realme 8 5G",
+      "originalPrice": 7990000,
+      "saleOffPrice": 6990000,
+      "categories": 1,
+      "detailCate": 9,
+      "feature": "Cấu hình nâng cấp, mượt mà - Chip MediaTek Dimensity 700 5G 8 nhân mạnh mẽ\nVuốt mượt, chạm êm - Màn hình 6.5\" có tốc độ làm tươi cao 90Hz",
+      "description": "Camera chụp đêm ấn tượng - Cụm 3 camera lên đến 48 MP, nhiều bộ lọc chụp đêm rõ nét\nĐủ năng lượng cho cả ngày dài - Dung lượng pin 5000 mAh, sạc nhanh 18 W, chế độ tiết kiệm pin",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659859286/anhhtus/pjjwnj4esvo4274tlz8l.jpg",
+      "id": 13
+    },
+    {
+      "name": "Xiaomi 12 Pro",
+      "originalPrice": 19990000,
+      "saleOffPrice": 15990000,
+      "categories": 1,
+      "detailCate": 3,
+      "feature": "Cân mọi tác vụ với CPU thế hệ mới - Vi xử lí Snapdragon 8 Gen 1 cùng RAM 8 GB\nTrải ngiệm giải trí hoàn hảo với màn hình tràn viền sắc nét - Kích thước 6.28 inches, AMOLED",
+      "description": "Cụm camera đa chức năng, lưu giữ mọi khoảnh khắc - Camera chính 50 MP đa dạng chế độ chụp\nThoải mái sử dụng cả ngày dài - Pin 4500 mAh, hỗ trợ sạc nhanh 67W",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659859388/anhhtus/hjjghav9myef6rq9cb7a.jpg",
+      "id": 14
+    },
+    {
+      "name": "Xiaomi 11T Pro",
+      "originalPrice": 14990000,
+      "saleOffPrice": 13090000,
+      "categories": 1,
+      "detailCate": 3,
+      "feature": "Màn hình giải trí cực đỉnh - Màn hình AMOLED 6.67 inch Full HD+, 120Hz\nCấu hình vượt trội, cân mọi tựa game - Chip Snapdragon 888 5G, GPU Adreno 660 mạnh mẽ",
+      "description": "Trải nghiệm điện ảnh đỉnh cao - Cụm camera sau lên đến 108 MP siêu nét, quay phim 8K\nPin cực lớn, sạc cực nhanh - Viên pin lớn 5000 mAh, sạc nhanh 120W",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659859469/anhhtus/zcifwf9qydgh9umcdydk.jpg",
+      "id": 15
+    },
+    {
+      "name": "Bàn phím cơ Corsair K65 RGB",
+      "originalPrice": 2999000,
+      "saleOffPrice": 2299000,
+      "categories": 2,
+      "detailCate": 8,
+      "feature": "Bàn phím cơ Corsair K65 RGB Rapidfire Speed switch\nPhiên bản TKL của K70",
+      "description": "Mặt phím bằng nhôm CNC cao cấp\nSử dụng switch Cherry MX Speed tốc độ cao",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659859652/anhhtus/nhyxmjjuxwxxfiv9bxnx.jpg",
+      "id": 16
+    },
+    {
+      "name": "K70 RGB MK.2 Mechanical Gaming",
+      "originalPrice": 4050000,
+      "saleOffPrice": 3390000,
+      "categories": 2,
+      "detailCate": 8,
+      "feature": "Model:Bàn phím Corsair K70 RGB MK.2\nKết nối:Có dây",
+      "description": "Kiểu dáng:\t104 phím + 9 phím chức năng\nSize:\tFull size\nĐèn led:\tRGB\nSwitch:\tCherry MX Red / Blue / Brown switch",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659859883/anhhtus/jewqo0eagvjzviwiyax8.jpg",
+      "id": 17
+    },
+    {
+      "name": "chuột corsair katar pro ultra light",
+      "originalPrice": 590000,
+      "saleOffPrice": 390000,
+      "categories": 2,
+      "detailCate": 8,
+      "feature": "Trang bị cảm biến PixArt 12.400 DPI\nĐiều khiển thông minh, tùy chỉnh không giới hạn",
+      "description": "Sử dụng tùy chỉnh bằng phần mềm CORSAIR iCUE cho phép điều khiển ánh sáng RGB động sống động, lập trình macro tinh vi và đồng bộ hóa ánh sáng toàn hệ thống trên các thiết bị ngoại vi.",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659860127/anhhtus/zhtu6crl2pps81ift9mb.jpg",
+      "id": 18
     }
   ],
   "categories": [
@@ -134,9 +244,27 @@
       "categories": 1
     },
     {
+      "name": "realme ",
+      "id": 9,
+      "key": "9 ",
+      "categories": 1
+    },
+    {
+      "name": "ASUS ROG",
+      "id": 5,
+      "key": "5",
+      "categories": 1
+    },
+    {
       "name": "Phụ kiện Apple",
       "id": 4,
       "key": "4",
+      "categories": 2
+    },
+    {
+      "name": "Phụ kiện máytinh",
+      "id": 8,
+      "key": "8",
       "categories": 2
     },
     {
@@ -152,7 +280,7 @@
       "categories": 2
     },
     {
-      "name": "Chân sạc Type C",
+      "name": "Pần cứng phần mềm",
       "id": 7,
       "key": "3",
       "categories": 3

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {  listCateDetailById } from "../../../api/category";
+import {  listAllDetail, listCateDetailById } from "../../../api/category";
 import { getProductIdCate } from "../../../api/product";
 import { login, register } from "../../../api/user";
 
@@ -49,6 +49,18 @@ export const getListCateDetailById:any = createAsyncThunk(
     }
 ) 
 
+export const getAllDetailCate:any = createAsyncThunk(
+    "category/getAllDetailCate",
+    async (user:any ) => {
+        try {   
+            const {data} = await listAllDetail(user);
+            return data
+        } catch (error:any) {
+            return error
+        }
+    }
+) 
+
 
 
 const categoryPhoneSlice = createSlice({
@@ -72,7 +84,11 @@ const categoryPhoneSlice = createSlice({
         }),
         builder.addCase(getListCateLinhKien.fulfilled, (state:any, action:any) => {
             state.value = action.payload
+        }),
+        builder.addCase(getAllDetailCate.fulfilled, (state:any, action:any) => {
+            state.value = action.payload
         })
+        
         
         
     }

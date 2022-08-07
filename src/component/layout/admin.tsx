@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { MailOutlined, LaptopOutlined, AndroidFilled, UnorderedListOutlined, CustomerServiceFilled, ApiFilled} from '@ant-design/icons';
-import type { MenuProps } from 'antd';
+import { MailOutlined, LaptopOutlined, AndroidFilled, UnorderedListOutlined, CustomerServiceFilled, ApiFilled,SearchOutlined} from '@ant-design/icons';
+import { Input, MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
@@ -56,8 +56,18 @@ const AdminLayout = () => {
     <div>
          <Layout>
     <HeaderCustom>
+      
       <Logo src={LogoImage} />
-      {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items1} /> */}
+      <p style={{float:"right",margin:"auto", color:"white"}}>Dashboard</p>
+      <div style={{ margin: "auto 0" }}>
+                    <div>
+                        <Input size="large" placeholder=" Search here..." style={{ borderRadius: "10px" }} prefix={<SearchOutlined/>} />
+                        {/* <Search placeholder="input search text" /> */}
+                    </div>
+                </div>
+                <div style={{margin:"auto 0"}}>
+                    <p style={{float:"right", color:"white"}}> Xin chao Vanhhhh</p>
+                </div>
     </HeaderCustom>
     <Layout>
       <Sider
