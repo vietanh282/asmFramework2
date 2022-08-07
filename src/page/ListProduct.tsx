@@ -49,7 +49,7 @@ const ListProduct = (props: Props) => {
                                 <p style={{color:"gray", fontSize:"13px"}}>{currency(item.originalPrice)} ₫</p>
                             </div>
                             <Desc >
-                                <p>{item.description}</p>
+                                <p>{item.feature}</p>
                             </Desc>
                             <div style={{display:"flex", gap:"10px"}}>
                                 <div className="star">

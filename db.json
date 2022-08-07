@@ -1,11 +1,27 @@
 {
   "users": [
     {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$w/8Cmzm9g5z2X1y.u0Nf0uxdpbo.LiE7oC0jIU5EGG8Hv3PNZMVGW",
+      "phone": "11111111",
+      "id": 1
+    },
+    {
+      "email": "linhhuong123@gmail.com",
+      "password": "$2a$10$Dyskk8XBRtlIN4QYERmgneHzV3bD93xXNx7alQrWoDsCi2NE.IBW.",
+      "phone": "123456789",
+      "role": "0",
+      "id": 2
+    },
+    {
       "email": "anhnvph14082@fpt.edu.vn",
       "password": "$2a$10$eDIV3aurgWxwblQMIzPBquBjGnqXnpWhI2nJ/nggjlR6rQRVCI2sC",
       "phone": "0972840223",
-      "id": 1
+      "role": "0",
+      "id": 3
     }
+    
+    
   ],
   "products": [
     {

@@ -18,6 +18,7 @@ import Signin from './page/Auth/signin'
 import Signup from './page/Auth/signup'
 import ListPhuKien from './page/Admin/phukien/phukien'
 import ListLinhKien from './page/Admin/linhkien/linhkien'
+import PrivateRoute from './midlerware/PrivateRoute'
 function App() {
 
   const [count, setCount] = useState(0)
@@ -40,7 +41,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
 
 
-          <Route path='admin' element={<AdminLayout />}>
+          <Route path='admin'element={<PrivateRoute><AdminLayout /></PrivateRoute>}>
             <Route index element={<Navigate to={"product"} />} />
             <Route path='product'>
               <Route index element={<ListProduct />} />

@@ -14,6 +14,7 @@ type FormInputs = {
     phone: string;
     email: string;
     password: string | number;
+    role:number
   };
 
   const fromSchema = yup.object().shape({
@@ -30,7 +31,7 @@ type FormInputs = {
   });
   const validation = { resolver: yupResolver(fromSchema) };
   
-const Signup = () => {
+const Register = () => {
 
     const {register, handleSubmit,formState} = useForm<FormInputs>(validation);
     const {errors} = formState;
@@ -68,6 +69,8 @@ const Signup = () => {
                     <Label htmlFor="password">Password</Label><br />
                     <Input type="password"   {...register("password", {required:true , minLength:6})}/>
                     <Error> {errors.password?.message}</Error>
+
+                    <Input type="role" style={{display:"none"}}  value={0} {...register("role", {required:true , minLength:6})}/>
                   <Btn>Đăng kí</Btn>
                 </Col>
                 
@@ -145,4 +148,4 @@ const Error = styled.div`
     margin-bottom: 10px;
 `
 
-export default Signup
+export default Register
