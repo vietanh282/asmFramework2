@@ -18,8 +18,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { getProductIdCateDetail } from '../features/Slide/product/product'
-// import {currency} from "../../helper.js";
+import { getAllProduct, getProductIdCateDetail } from '../features/Slide/product/product'
 const DetailProduct = () => {
     const [productId, setProductId] = useState<any>({})
     const { id } = useParams();
@@ -36,11 +35,12 @@ const DetailProduct = () => {
             setProductId(data)
 
             dispatch(getProductIdCateDetail(Number(data.detailCate)))
+           
         }
         getProductById(id);
 
 
-    }, [])
+    }, [id])
 
     const addToCart = (product: any) => {
         console.log(product);
@@ -117,13 +117,14 @@ const DetailProduct = () => {
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}
                 >
-                    {productCate?.map((item: any, index: number) =>
+                    {productCate?.filter((item:any) => item.id != productId.id).map((item: any, index: number) =>
                         <SwiperSlide key={index + 1}>
+                            
                             <Col>
                                 <div style={{ margin: "auto", textAlign: "center", marginBottom: "10px" }}>
-                                   <a href={'/detail/'+ item.id}><img src={item.image} alt="" /></a>
+                                   <Link to={'/detail/'+ item.id}><img src={item.image} alt="" width={160} style={{maxWidth:"100%"}}/></Link>
                                 </div>
-                                <a href="" style={{ color: "black" }}><p>{item.name}</p></a>
+                                <Link to={'/detail/'+ item.id} style={{ color: "black" }}><p>{item.name}</p></Link>
                                 <div style={{ display: "flex", }}>
                                     <p style={{ color: "red", fontWeight: "600" }}>{currency(item.saleOffPrice)} ₫ </p><span style={{ color: "gray", fontSize: "12px", marginLeft: "10px" }}>{currency(item.originalPrice)} ₫</span>
                                 </div>

@@ -6,6 +6,9 @@ import { add, editProduct, getProductId, listProduct } from '../../../api/produc
 import UploadImage from '../../../component/Product/UploadImage';
 import { useQuery } from '@tanstack/react-query';
 import { listCate } from '../../../api/category';
+import { useDispatch } from 'react-redux';
+import { getAllDetailCate, getListCateDetailById } from '../../../features/Slide/categoryPhone/catePhone';
+import { getCateNameById } from '../../../features/Slide/category';
 
 
 
@@ -15,10 +18,12 @@ const { Option } = Select;
 const EditProduct = () => {
 	const [image, setUploadedImage] = React.useState('')
 	const [category, setCategory] = useState([])
+	const [imgPreview, setImgPreivew] = useState("")
 	const navigate = useNavigate()
-
+	const [listCateDetail, setListCateDetail] = useState([])
 	const { id } = useParams();
 	const [form] = Form.useForm();
+	const dispatch = useDispatch();
 
 	const onHandleAdd = (image: any) => {
 		// console.log(image);
@@ -26,30 +31,38 @@ const EditProduct = () => {
 
 	}
 
-	useEffect((() => {
-		const imgPreview = document.getElementById("imgPreview");
-		const imgPost = document.getElementById("file-upload");
+	const handlerChangeCate = async (e: any) => {
+		console.log(e);
+		const { payload } = await dispatch(getListCateDetailById(Number(e)))
+		setListCateDetail(payload)
+	}
 
+	
+
+	useEffect((() => {
 		if (id) {
 			const getCate = async (id: any) => {
 				const { data } = await getProductId(id);
-				console.log(data.image);
+				// console.log(data.image);
+				setImgPreivew(data.image);
 				form.setFieldsValue(data)
 				// onreset(payload)
 
 			}
 			getCate(id);
 		}
-	}), [])
-	useEffect(() => {
+
 		const listcategory = async () => {
 			const { data } = await listCate();
-			console.log(data);
-
+			
+			const { payload } = await dispatch(getAllDetailCate())
+			// console.log(payload);
+			setListCateDetail(payload);
 			setCategory(data)
 		}
 		listcategory();
-	}, [])
+	}), [])
+
 	const onFinish = async (values: any) => {
 		console.log('Success:', values);
 		console.log(image);
@@ -61,12 +74,8 @@ const EditProduct = () => {
 				// values.saleOffPrice = "Mã giảm giá quá lớn"
 				message.error("Giá giảm không được > giá cũ")
 
-
-
-			} else if (!image) {
-				message.error("Bạn chưa chọn ảnh")
-			} else {
-				const data = await editProduct({ ...values, image, id })
+			}else {
+				const data = await editProduct({ ...values, image: image || imgPreview, id })
 				// console.log(data);
 				message.success("Cập nhật thành công");
 				navigate("/admin")
@@ -86,27 +95,36 @@ const EditProduct = () => {
 		<>
 			<Breadcrumb>
 				<Typography.Title level={2} style={{ margin: 0 }}>
-					Thêm mới
+					Sửa sản phẩm 
 				</Typography.Title>
 			</Breadcrumb>
-			<Row gutter={16}>
-				<Col span={10}>
+			<Form
+				form={form}
+				// name="product"
+				initialValues={{}}
+				onFinish={onFinish}
+				onFinishFailed={onFinishFailed}
+				autoComplete="on"
+				labelCol={{ span: 24 }}
+			>
+				<Row gutter={16}>
 
-					<UploadImage onAdd={onHandleAdd} />
+					<Col span={10}>	
+						<Form.Item
+							name="image"
+							// labelCol={{ span: 24 }}
+							label="Ảnh sản phẩm"
+							// rules={[{ required: true, message: 'Tên sản phẩm không được trống' }]}
+						>
+							{/* <Input size="large" /> */}
+							<UploadImage img={imgPreview} onAdd={onHandleAdd} />
+							
+						</Form.Item>
+					
+					</Col>
+					<Col span={14}>
+						<Typography.Title level={5}>Thông tin sản phẩm</Typography.Title>
 
-					{/* <UploadTest/> */}
-				</Col>
-				<Col span={14}>
-					<Typography.Title level={5}>Thông tin sản phẩm</Typography.Title>
-					<Form
-						form={form}
-						// name="product"
-						initialValues={{}}
-						onFinish={onFinish}
-						onFinishFailed={onFinishFailed}
-						autoComplete="on"
-						labelCol={{ span: 24 }}
-					>
 						<Form.Item
 							name="name"
 							labelCol={{ span: 24 }}
@@ -146,13 +164,29 @@ const EditProduct = () => {
 									name="categories"
 									rules={[{ required: true }]}
 								>
+									<Select style={{ width: '100%' }} size="large" onChange={(e) => handlerChangeCate(e)}>
+										{category.map((item: any, index: any) => (
+											<Option value={item.id} key={index + 1}>{item.name}</Option>
+										))}
+									</Select>
+								</Form.Item>
+
+							</Col>
+
+							<Col span={12}>
+								<Form.Item
+									label="Dòng sản phẩm"
+									name="detailCate"
+									rules={[{ required: true }]}
+								>
 									<Select style={{ width: '100%' }} size="large">
-										{category.map((item: any) => (
-											<Option value={item.name}>{item.name}</Option>
+										{listCateDetail.map((item: any, index: any) => (
+											<Option value={item.id} key={index + 1}>{item.name}</Option>
 										))}
 									</Select>
 								</Form.Item>
 							</Col>
+
 						</Row>
 
 						<Form.Item
@@ -177,9 +211,11 @@ const EditProduct = () => {
 								Cập nhật sản phẩm
 							</Button>
 						</Form.Item>
-					</Form>
-				</Col>
-			</Row>
+
+					</Col>
+
+				</Row>
+			</Form>
 		</>
 	)
 }

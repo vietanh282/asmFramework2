@@ -9,7 +9,7 @@ const PrivateRoute = (props: PrivateRouteProps) => {
     const isUser = localStorage.getItem("user") ? JSON.parse(String(localStorage.getItem("user"))).user : ""; 
     console.log(isUser);
     if (!isUser) {
-        return <Navigate to="/"/>
+        return <Navigate to="1"/>
     } else if (isUser.role == "0") {
         return <Navigate to="/"/>
     } 

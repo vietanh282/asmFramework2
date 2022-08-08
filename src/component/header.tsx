@@ -9,6 +9,7 @@ import { UserOutlined } from '@ant-design/icons';
 import MenuHeader from './MenuHeader';
 import { useCart } from 'react-use-cart';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 const Header = () => {
    
     return (
@@ -21,7 +22,7 @@ const Header = () => {
 
                 <div style={{ margin: "auto 0" }}>
                     <div>
-                        <Input size="large" placeholder=" Search here..." style={{ borderRadius: "10px" }} prefix={<SearchOutlined/>} />
+                    <SearchBar  ></SearchBar>
                     </div>
                 </div>
 

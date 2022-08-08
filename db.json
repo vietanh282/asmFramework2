@@ -1,10 +1,11 @@
 {
   "users": [
     {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$w/8Cmzm9g5z2X1y.u0Nf0uxdpbo.LiE7oC0jIU5EGG8Hv3PNZMVGW",
-      "phone": "11111111",
-      "id": 1
+      "email": "anhnvph14082@fpt.edu.vn",
+      "password": "$2a$10$eDIV3aurgWxwblQMIzPBquBjGnqXnpWhI2nJ/nggjlR6rQRVCI2sC",
+      "phone": "0972840223",
+      "role": "0",
+      "id": 3
     },
     {
       "email": "linhhuong123@gmail.com",
@@ -14,14 +15,12 @@
       "id": 2
     },
     {
-      "email": "anhnvph14082@fpt.edu.vn",
-      "password": "$2a$10$eDIV3aurgWxwblQMIzPBquBjGnqXnpWhI2nJ/nggjlR6rQRVCI2sC",
-      "phone": "0972840223",
-      "role": "0",
-      "id": 3
+      "email": "admin@gmail.com",
+      "password": "$2a$10$w/8Cmzm9g5z2X1y.u0Nf0uxdpbo.LiE7oC0jIU5EGG8Hv3PNZMVGW",
+      "phone": "11111111",
+      "role": "1",
+      "id": 1
     }
-    
-    
   ],
   "products": [
     {
@@ -221,6 +220,17 @@
       "description": "Sử dụng tùy chỉnh bằng phần mềm CORSAIR iCUE cho phép điều khiển ánh sáng RGB động sống động, lập trình macro tinh vi và đồng bộ hóa ánh sáng toàn hệ thống trên các thiết bị ngoại vi.",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659860127/anhhtus/zhtu6crl2pps81ift9mb.jpg",
       "id": 18
+    },
+    {
+      "name": "VERTU Signature V - Black Gold Diamond Iron Black Alligator",
+      "originalPrice": 4000000000,
+      "saleOffPrice": 3380000000,
+      "categories": 1,
+      "detailCate": 5,
+      "feature": "Công nghệ màn hình\nThiết kế\nNguyên khối\nChất liệu\nKhung bằng vàng nạm kim cương & Mặt lưng da cá sấu cao cấp\nKích thước\n130 x 42 x 13 mm\nTrọng lượng\n166g ~ 238 g\nTFT LCD\nĐộ phân giải\n\nQVGA (240 x 320 Pixels)\nMàn hình rộng\n\n2''\nHệ điều hành\n\nLinux based feature phone",
+      "description": "Vertu Signature V Black Gold Diamond Iron Alligator là một tác phẩm thời trang đầy mê hoặc đến từ những người thợ thủ công lành nghề và phải trải qua nhiều quy trình kiểm tra kỹ lưỡng trước khi đến tay người dùng. Đây là một chiếc điện thoại thể hiện đẳng cấp thượng lưu của người dùng khi được hoàn thiện từ những nguyên liệu quý hiếm như da cá sấu, vàng và kim cương.",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659886128/anhhtus/foiwcc3qtwgchd7hpdp5.jpg",
+      "id": 19
     }
   ],
   "categories": [
@@ -285,8 +295,8 @@
     },
     {
       "name": "Dán màn hình",
-      "id": 5,
-      "key": "5",
+      "id": 10,
+      "key": "10",
       "categories": 2
     },
     {

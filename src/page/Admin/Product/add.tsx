@@ -81,7 +81,7 @@ const AddProduct = () => {
 			</Breadcrumb>
 			<Row gutter={16}>
 				<Col span={10}>
-					<UploadImage onAdd={onHandleAdd} />
+					<UploadImage img={image} onAdd={onHandleAdd} />
 					{/* <UploadTest/> */}
 				</Col>
 				<Col span={14}>

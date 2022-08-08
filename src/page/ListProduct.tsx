@@ -15,7 +15,7 @@ const ListProduct = (props: Props) => {
     const listProduct = useSelector((item:any) => item.product.value)
     const {isLoading, data, error} = useQuery<any>(['Product'], listProduct)
     const loadData = data?.data
-    console.log(listProduct);
+    // console.log(listProduct);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getAllProduct())
