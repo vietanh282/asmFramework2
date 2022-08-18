@@ -9,7 +9,8 @@ import { listCate } from '../../../api/category';
 import { useDispatch } from 'react-redux';
 import { getAllDetailCate, getListCateDetailById } from '../../../features/Slide/categoryPhone/catePhone';
 import { getCateNameById } from '../../../features/Slide/category';
-
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 
 const { TextArea } = Input
@@ -203,7 +204,7 @@ const EditProduct = () => {
 							label="Mô tả sản phẩm"
 							rules={[{ required: true, message: 'Mô tả sản phẩm' }]}
 						>
-							<TextArea name="description" />
+							<ReactQuill theme="snow"  style={{background:"#fff"}}  />
 						</Form.Item>
 
 						<Form.Item>

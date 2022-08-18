@@ -20,6 +20,20 @@
       "phone": "11111111",
       "role": "1",
       "id": 1
+    },
+    {
+      "email": "linhhuong1234567@gmail.com",
+      "password": "$2a$10$HGAAD1w/AptQ9rePHbtUgOGzrZEZ1vGvjvfEZJwsQPcvwpR/F/5pO",
+      "phone": "565655",
+      "role": "0",
+      "id": 4
+    },
+    {
+      "email": "long@fpt.edu.vvn",
+      "password": "$2a$10$U3Zg6hbcKRseFwNhtp7tceAFQTton2FbaKEn7gmq8lTqHQU0.YFAu",
+      "phone": "0972840223",
+      "role": "0",
+      "id": 5
     }
   ],
   "products": [
@@ -231,6 +245,17 @@
       "description": "Vertu Signature V Black Gold Diamond Iron Alligator là một tác phẩm thời trang đầy mê hoặc đến từ những người thợ thủ công lành nghề và phải trải qua nhiều quy trình kiểm tra kỹ lưỡng trước khi đến tay người dùng. Đây là một chiếc điện thoại thể hiện đẳng cấp thượng lưu của người dùng khi được hoàn thiện từ những nguyên liệu quý hiếm như da cá sấu, vàng và kim cương.",
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659886128/anhhtus/foiwcc3qtwgchd7hpdp5.jpg",
       "id": 19
+    },
+    {
+      "name": "test",
+      "originalPrice": 1111111111111111,
+      "saleOffPrice": 222222,
+      "categories": 2,
+      "detailCate": 10,
+      "feature": "đẹp",
+      "description": "<p>vàng</p>",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1660796595/anhhtus/scqtxrnmakpsdpzfxzuf.jpg",
+      "id": 20
     }
   ],
   "categories": [
@@ -310,6 +335,44 @@
       "id": 7,
       "key": "3",
       "categories": 3
+    }
+  ],
+  "orders": [
+    {
+      "address": "Hà Đông",
+      "confirmAddress": "<p>Hà Đông</p>",
+      "name": "update",
+      "phone": "565655",
+      "listProduct": [
+        {
+          "id": 5,
+          "name": "Iphone 11 Pro",
+          "price": 10790000,
+          "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659858230/anhhtus/ekeiydbgmel2ei9d077r.jpg",
+          "originalPrice": 14990000,
+          "feature": "Màu sắc phù hợp cá tính - 6 màu sắc bắt mắt để lựa chọn\nHiệu năng mượt mà, ổn định - Chip A13, RAM 4GB",
+          "description": "Bắt trọn khung hình - Camera kép hỗ trợ góc rộng, chế độ Night Mode\nYên tâm sử dụng - Kháng nước, kháng bụi IP68, kính cường lực Gorilla",
+          "categories": 1,
+          "quantity": 2,
+          "itemTotal": 21580000
+        },
+        {
+          "id": 1,
+          "name": "Iphone SX Mã Gold",
+          "price": 18000000,
+          "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659857714/anhhtus/wh5jjgpnhicpkffnipub.jpg",
+          "originalPrice": 22900000,
+          "feature": "iPhone Xs 64GB vẫn áp dụng nguyên tắc thiết kế quen thuộc với phần khung được làm từ thép không gỉ. Hai mặt trước sau được ốp kính cường lực thế hệ mới nhằm giúp giảm thiểu tối đa thiệt hại khi va đập. Các chi tiết nhỏ đạt độ hoàn thiện cao, được thiết kế tỉ mỉ.",
+          "description": "Hoàn toàn xứng đáng với những gì được mong chờ, phiên bản cao cấp nhất iPhone Xs Max 64 GB của Apple năm nay nổi bật với chip A12 Bionic mạnh mẽ, màn hình rộng đến 6.5 inch, cùng camera kép trí tuệ nhân tạo và Face ID được nâng cấp.",
+          "categories": 1,
+          "quantity": 2,
+          "itemTotal": 36000000
+        }
+      ],
+      "cartTotal": 57580000,
+      "status": "3",
+      "createdAt": "2022-08-18T04:26:36.811Z",
+      "id": 1
     }
   ]
 }

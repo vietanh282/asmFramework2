@@ -7,7 +7,7 @@ import type { ColumnsType } from 'antd/es/table';
 
 import { listProduct, removeProduct } from '../../../api/product';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
-import { listCate, removeCate } from '../../../api/category';
+import { listCate, removeCate, removeDetailCate } from '../../../api/category';
 import type { TableColumnsType } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { getListCatePhone, getListCatePhuKien } from '../../../features/Slide/categoryPhone/catePhone';
@@ -48,12 +48,12 @@ const ListPhuKien = () => {
 
         setTimeout(() => {
 
-            removeCate(id);
+            removeDetailCate(id);
             setConfirmLoading(false);
 
             message.success({ content: 'Xóa Thành Công!', duration: 2 });
 
-            // navigate("/admin/categories")
+            navigate("/admin/categories/phuKien")
         }, 1000)
 
     }
@@ -159,6 +159,7 @@ const ListPhuKien = () => {
                 title: 'Mô tả',
                 dataIndex: 'description',
                 key: 'description',
+                render: text => <div><div dangerouslySetInnerHTML={{__html:`${text}`}}></div></div>
             },
             {
                 title: "Hành Động", key: "action", render: (text, record: any) => (
@@ -214,7 +215,7 @@ const ListPhuKien = () => {
                 <Typography.Title level={2} style={{ margin: 0 }}>
                     Điện thoại
                 </Typography.Title>
-                <Link to="/admin/categories/add">
+                <Link to="/admin/categories/phuKien/add">
                     <Button type="dashed" shape="circle" icon={<PlusOutlined />} />
                 </Link>
             </Breadcrumb>

@@ -44,7 +44,7 @@ const Sidebar = () => {
 
   const onClick: MenuProps['onClick'] = async (e) => {
     console.log('click ', e);
-    console.log(e.keyPath[0]);
+    // console.log(e.keyPath[0]);
     const { payload } = await dispatch(getProductIdCateDetail(Number(e.keyPath[0])))
     console.log(payload);
 

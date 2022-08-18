@@ -1,46 +1,92 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useCart } from 'react-use-cart'
 import styled from 'styled-components';
 // import store from '../redux/store';
 import { CloseOutlined, CloseSquareFilled, PlusSquareFilled, MinusSquareFilled } from '@ant-design/icons';
-import { Modal } from 'antd';
+import { Button, Form, Input, message, Modal } from 'antd';
 import { currency } from '../helper/helper';
+import ReactQuill from 'react-quill';
+import { addOrder22 } from '../features/Slide/order';
 const CartPage = () => {
   const { items, cartTotal, updateItemQuantity, removeItem } = useCart();
-  console.log(items);
+  const dispatch = useDispatch();
+  // console.log(items);
 
-  const deleteToCart = (item:any) => {
+  const deleteToCart = (item: any) => {
     Modal.confirm({
-      title:"Bạn có chắc muốn xóa sản phẩm này không ?",
+      title: "Bạn có chắc muốn xóa sản phẩm này không ?",
       onOk: () => {
-        updateItemQuantity(item.id, Number(item.quantity - item.quantity) )
+        updateItemQuantity(item.id, Number(item.quantity - item.quantity))
       },
 
-      
-     })
+
+    })
   }
-  const minus = (item:any) => {
+  const minus = (item: any) => {
     if (item.quantity == 1) {
       Modal.confirm({
-        title:"Bạn có chắc muốn xóa sản phẩm này không ?",
+        title: "Bạn có chắc muốn xóa sản phẩm này không ?",
         onOk: () => {
           updateItemQuantity(item.id, Number(item.quantity) - 1)
         },
 
-        
-       })
-    }else{
+
+      })
+    } else {
       updateItemQuantity(item.id, Number(item.quantity) - 1)
 
     }
   }
+
+  // Modal
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const onFinish = async (values: any) => {
+    console.log('Success:', values);
+    console.log(values);
+    console.log(items);
+
+    try {
+      {
+        // const data = await add({ ...values })
+        // console.log(data);
+        var curDate = new Date();
+        console.log(curDate);
+        
+        const order = dispatch(addOrder22({
+          address: values.address,
+          confirmAddress: values.confirmAddress,
+          name: values.name,
+          phone: values.phone,
+          listProduct:items,
+          cartTotal:cartTotal,
+          status: 0,
+          createdAt: curDate
+        }))
+
+        message.success("Đặt hàng thành công");
+        // navigate("/admin")
+      }
+
+      // navigate(-1)
+    } catch (err) {
+      message.error("Có lỗi xảy ra")
+    }
+  };
+
   return (
     <div>
       <Cart >
         <h2>Giỏ hàng</h2>
 
-        {items?.map((item, index) => (
+        {items?.map((item: any, index: any) => (
           <Row className="row" key={index + 1}>
             <div className="col" style={{ margin: "auto" }}>
               <a href=""><Image src={item.image} alt="" /></a>
@@ -54,7 +100,7 @@ const CartPage = () => {
                 <div style={{ margin: "auto 0", display: "flex" }}>
 
                   <div style={{ margin: "auto" }}>
-                    <PlusSquareFilled onClick={() => updateItemQuantity(item.id, Number(item.quantity) + 1)} style={{ color: "red", fontSize: "26px",cursor:"pointer" }} />
+                    <PlusSquareFilled onClick={() => updateItemQuantity(item.id, Number(item.quantity) + 1)} style={{ color: "red", fontSize: "26px", cursor: "pointer" }} />
                   </div>
 
                   <div>
@@ -62,7 +108,7 @@ const CartPage = () => {
                   </div>
 
                   <div style={{ margin: "auto" }}>
-                    <MinusSquareFilled onClick={() => minus(item)} style={{ color: "red", fontSize: "26px",cursor:"pointer" }} />
+                    <MinusSquareFilled onClick={() => minus(item)} style={{ color: "red", fontSize: "26px", cursor: "pointer" }} />
                   </div>
                 </div>
               </SoLuong>
@@ -71,7 +117,7 @@ const CartPage = () => {
                 <p>{item.description}</p>
                 {/* <p>Ưu đãi Galaxy gift lên đến 1.700.000đ (VieON VIP HBO GO, Zing MP3, Phúc Long, Galaxy Play)</p> */}
               </KhuyenMai>
-              <Delete ><CloseSquareFilled onClick={() => deleteToCart(item)}/></Delete>
+              <Delete ><CloseSquareFilled onClick={() => deleteToCart(item)} /></Delete>
             </div>
           </Row>
         ))}
@@ -81,21 +127,77 @@ const CartPage = () => {
             <p style={{ color: "red" }}>{currency(cartTotal)} ₫</p>
           </TongTien>
           <div>
-            <DatHang>Tiến hành đặt hàng</DatHang>
+            <DatHang onClick={() => showModal()}>Tiến hành đặt hàng</DatHang>
           </div>
           <div>
             <ThemSanPhamKhac>Chọn thêm sản phẩm khác</ThemSanPhamKhac>
           </div>
         </div>
 
+        <Modal23 title="Đặt hàng" visible={isModalVisible} onCancel={handleCancel}>
+          <Form
+            // name="product"
+            initialValues={{}}
+            onFinish={onFinish}
+            // onFinishFailed={onFinishFailed}
+            autoComplete="on"
+            labelCol={{ span: 24 }}
+          >
+            <Form.Item
+              name="name"
+              labelCol={{ span: 24 }}
+              label="Họ tên"
+              rules={[{ required: true, message: 'Họ tên không được trống' }]}
+            >
+              <Input size="large" />
+            </Form.Item>
+
+            <Form.Item
+              name="phone"
+              labelCol={{ span: 24 }}
+              label="Số điện thoại"
+              rules={[{ required: true, message: 'Số điện thoại không được trống' }]}
+            >
+              <Input size="large" />
+            </Form.Item>
+
+            <Form.Item
+              name="address"
+              labelCol={{ span: 24 }}
+              label="Địa chỉ"
+              rules={[{ required: true, message: 'Địa chỉ không được trống' }]}
+            >
+              <Input size="large" />
+            </Form.Item>
+
+            <Form.Item
+              name="confirmAddress"
+              labelCol={{ span: 24 }}
+              label="Địa chỉ cụ thể"
+              rules={[{ required: true, message: 'Không được để trống' }]}
+            >
+              <ReactQuill theme="snow" style={{ background: "#fff" }} />
+              {/* <TextArea name="description" /> */}
+            </Form.Item>
+
+            <Form.Item>
+              <Button type="primary" htmlType="submit" style={{ float: "right", background: "red", border: "red" }}>
+                Đặt hàng
+              </Button>
+            </Form.Item>
+          </Form>
+        </Modal23>
+
 
       </Cart>
     </div>
   )
 }
+
 const Cart = styled.div`
   width: 50%;
   margin: auto;
+  
 `
 const Row = styled.div`
   display: grid;
@@ -183,4 +285,12 @@ const ThemSanPhamKhac = styled.button`
     color:#fff;
   } */
 `
+const Modal23 = styled(Modal)`
+  .ant-modal-footer{
+  display: none;
+  
+}
+
+`
+
 export default CartPage

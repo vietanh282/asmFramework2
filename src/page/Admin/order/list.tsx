@@ -1,27 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from "styled-components";
-import { Typography, Button, Table, Space, Popconfirm, Modal, message, Input } from 'antd';
+import { Typography, Button, Table, Space, Popconfirm, Modal, message, Input, Tag } from 'antd';
 import { Link, useNavigate } from 'react-router-dom'
 import { SearchOutlined, PlusOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
-
-import { listProduct, removeProduct } from '../../../api/product';
-import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
-import { listCate } from '../../../api/category';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllDetailCate } from '../../../features/Slide/categoryPhone/catePhone';
 import type { InputRef } from 'antd';
 import type { FilterConfirmProps } from 'antd/es/table/interface';
-import { getAllProduct } from '../../../features/Slide/product/product';
+import { deleteOrder, getListOrder } from '../../../features/Slide/order';
 // import { useQuery } from 'react-query'
 const { Paragraph } = Typography
 
 
 interface DataType {
     name: string;
-    saleOffPrice: number;
-    feature: string;
-    description: string;
+    phone: string;
+    address: string;
+    confirmAddress: string;
+    listProduct: any;
+    status: string;
 }
 
 type ProductManagerProps = {
@@ -30,10 +27,10 @@ type ProductManagerProps = {
 }
 
 
-const ListProduct = () => {
+const orderlist = () => {
 
     // const [dataTable, setDataTable] = useState([])
-    const productData = useSelector((item: any) => item.product.value)
+    const listOrder = useSelector((item: any) => item.order.value)
     const category = useSelector((item: any) => item.categoryPhone.value)
     const [confirmLoading, setConfirmLoading] = useState(false);
     // const [isLoading, setIsLoading] = useState(false)
@@ -112,33 +109,22 @@ const ListProduct = () => {
 
     });
     useEffect(() => {
-        // const listcategory = async () => {
-        //     const { data } = await listCate();
-        //     console.log(data);
 
-        //     setCategory(data)
-        // }
-        // listcategory();
-        dispatch(getAllDetailCate())
-        dispatch(getAllProduct())
+        // dispatch(getAllDetailCate())
+        dispatch(getListOrder())
     }, [])
 
-    // const { isLoading, data, error } = useQuery<any>(['Product'], listProduct)
-    console.log(productData);
-    
-    const dataTable = productData.map((item: any, index: number) => {
+    console.log(listOrder);
+
+    const dataTable = listOrder.map((item: any, index: number) => {
         return {
             key: index + 1,
             id: item.id,
-            name:item.name,
-            originalPrice: item.originalPrice,
-            saleOffPrice: item.saleOffPrice,
-            categories: item.categories,
-            detailCate: item.detailCate,
-            feature: item.feature,
-            description: item.description,
-            image: item.image,
-
+            name: item.name,
+            phone: item.phone,
+            address: item.address,
+            confirmAddress: item.confirmAddress,
+            status: item.status
         }
     })
 
@@ -146,19 +132,17 @@ const ListProduct = () => {
         setConfirmLoading(true);
         message.loading({ content: 'Loading...' });
 
-        setTimeout(() => {
+        setTimeout(async () => {
 
-            removeProduct(id);
+            dispatch(deleteOrder(id))
             setConfirmLoading(false);
 
-            message.success({ content: 'Xóa Thành Công!', duration: 2 });
-
-            navigate("/admin")
+            message.success({ content: 'Xóa Thành Công!', duration: 1 });
+            await dispatch(getListOrder())
+            // navigate("/admin/order")
         }, 1000)
-    }
 
-    const handAn = (id: any) => {
-
+       
     }
 
     const columns: ColumnsType<DataType> = [
@@ -171,57 +155,59 @@ const ListProduct = () => {
             sortDirections: ['descend'],
         },
         {
-            title: 'Tên sản phẩm',
+            title: 'Mã đơn',
+            dataIndex: 'id',
+            key: "id",
+        },
+        {
+            title: 'Họ tên',
             dataIndex: 'name',
             key: 'name',
             ...getColumnSearchProps('name'),
-            render: text => <a>{text}</a>,
-        },
-        {
-            title: 'Hình ảnh',
-            dataIndex: 'image',
-            key: 'image',
-            render: text => <img src={text} alt="" width={100} />,
-
-
-        },
-        {
-            title: 'Đặc điểm',
-            dataIndex: 'feature',
-            key: 'feature',
             render: text => <p>{text}</p>,
-
-
         },
         {
-            title: 'Loại hàng',
-            dataIndex: 'categories',
-            key: 'categories',
-            filters: category.map((item: any) => { return { text: item.name, value: item.id } }),
-            onFilter: (value, record: any) => {
-                // console.log(record.detailCate);
-                // console.log(value);
+            title: 'Số điện thoại',
+            dataIndex: 'phone',
+            key: 'phone',
+            render: text => <p>{text}</p>,
+        },
+        {
+            title: 'Địa chỉ',
+            dataIndex: 'address',
+            key: 'address',
+            render: text => <p>{text}</p>,
+        },
 
-                return record.detailCate == value
-            }
-        },
         {
-            title: 'Giá khuyến mãi',
-            dataIndex: 'saleOffPrice',
-            key: 'saleOffPrice',
-        },
-        {
-            title: 'Mô tả',
-            dataIndex: 'description',
-            key: 'description', 
-            render: text => <div><div dangerouslySetInnerHTML={{__html:`${text}`}}></div></div>
+            title: 'Trạng thái',
+            dataIndex: 'status',
+            key: 'status',
+            render: (_, { status }) => (
+                <>
+                    {status == "0"
+                        ? <Tag color="volcano">Chưa duyệt</Tag>
+                        : status == "1"
+                            ? <Tag color="geekblue">Đã duyệt</Tag>
+                            : status == "2"
+                                ? <Tag color="yellow">Đang giao</Tag>
+                                : status == "3"
+                                ? <Tag color="green">Đã giao</Tag>
+                                : status == "4"
+                                ? <Tag color="red">Đã hủy</Tag>
+                                : ""
+                    }
+
+
+                </>
+            ),
         },
         {
             title: "Hành Động", key: "action", render: (text, record: any) => (
                 <Space align="center" size="middle">
                     <Button style={{ background: "#198754", color: "#fff" }} >
-                        <Link to={`/admin/product/edit/${record.id}`} >
-                            <span className="text-white">Sửa</span>
+                        <Link to={`/admin/order/detail/${record.id}`} >
+                            <span className="text-white">Chi tiết đơn hàng</span>
                         </Link>
 
                     </Button>
@@ -250,14 +236,12 @@ const ListProduct = () => {
         <>
 
             <Breadcrumb>
-                <Typography.Title level={2} style={{ margin: 0 }}>
-                    Điện thoại
+                <Typography.Title level={2} style={{ margin: "10 0" }}>
+                    Danh sách đơn hàng
                 </Typography.Title>
-                <Link to="/admin/product/add">
-                    <Button type="dashed" shape="circle" icon={<PlusOutlined />} />
-                </Link>
+               
             </Breadcrumb>
-            <Table  columns={columns} dataSource={dataTable} />
+            <Table columns={columns} dataSource={dataTable} />
 
         </>
     )
@@ -268,4 +252,4 @@ const Breadcrumb = styled.div`
     justify-content: space-between;
     margin-top: 20px;
 `
-export default ListProduct
+export default orderlist

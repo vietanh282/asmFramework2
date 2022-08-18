@@ -7,7 +7,7 @@ import type { ColumnsType } from 'antd/es/table';
 
 import { listProduct, removeProduct } from '../../../api/product';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
-import { listCate, removeCate } from '../../../api/category';
+import { listCate, removeCate, removeDetailCate } from '../../../api/category';
 import type { TableColumnsType } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { getListCatePhone } from '../../../features/Slide/categoryPhone/catePhone';
@@ -49,14 +49,14 @@ const ListCategory = () => {
 
         setTimeout(() => {
 
-            removeCate(id);
+            removeDetailCate(id);
             setConfirmLoading(false);
 
             message.success({ content: 'Xóa Thành Công!', duration: 2 });
 
-            // navigate("/admin/categories")
+            navigate("/admin/categories")
         }, 1000)
-
+      
     }
 
     // fetchData()
@@ -160,6 +160,7 @@ const ListCategory = () => {
                 title: 'Mô tả',
                 dataIndex: 'description',
                 key: 'description',
+                render: text => <div><div dangerouslySetInnerHTML={{__html:`${text}`}}></div></div>
             },
             {
                 title: "Hành Động", key: "action", render: (text, record: any) => (

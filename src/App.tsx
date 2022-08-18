@@ -16,9 +16,11 @@ import AddCategory from './page/Admin/category/add'
 import Login from './page/Auth/signin'
 import Signin from './page/Auth/signin'
 import Signup from './page/Auth/signup'
-import ListPhuKien from './page/Admin/phukien/phukien'
+import ListPhuKien from './page/Admin/phukien/list'
 import ListLinhKien from './page/Admin/linhkien/linhkien'
 import PrivateRoute from './midlerware/PrivateRoute'
+import ListOrder from './page/Admin/order/list'
+import DetailOrder from './page/Admin/order/detail'
 function App() {
 
   const [count, setCount] = useState(0)
@@ -41,7 +43,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
 
 
-          <Route path='admin'element={<PrivateRoute><AdminLayout /></PrivateRoute>}>
+          <Route path='admin' element={<PrivateRoute><AdminLayout /></PrivateRoute>}>
             <Route index element={<Navigate to={"product"} />} />
             <Route path='product'>
               <Route index element={<ListProduct />} />
@@ -63,6 +65,12 @@ function App() {
                 <Route index element={<ListLinhKien />} />
               </Route>
             </Route>
+            <Route path='order'>
+              <Route index element={<ListOrder />} />
+              <Route path='' element={<AddProductPage />} />
+              <Route path='detail/:id' element={<DetailOrder />} />
+            </Route>
+
 
           </Route>
         </Routes>

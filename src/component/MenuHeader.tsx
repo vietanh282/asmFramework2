@@ -59,14 +59,9 @@ const MenuHeader = () => {
                                 <div>
                                      <Link to={'/signin'} style={{ color: "#fff" }}><span>Login</span></Link>
                                 </div>
-                            
-                                
-                                
                                }
                              </Col>
-                           
                         </Row>
-                    
                 </Col>
             </Row>
         </div>

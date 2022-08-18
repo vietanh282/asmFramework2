@@ -10,6 +10,10 @@ export const addCate:any = (cate:any) => {
     const url = `/categories`;
     return instance.post(url, cate);
 }   
+export const addCateDetail:any = (cate:any) =>{
+    const url = `/detailCate`;
+    return instance.post(url, cate);
+}
 
 export const editCate:any = (cate:any) => {
     const url = `/categories/${cate.id}`;
@@ -32,5 +36,9 @@ export const listCateDetailById:any = (id:number) => {
 }
 export const listAllDetail:any = () => {
     const url = `/detailCate`;
+    return instance.get(url);
+}
+export const removeDetailCate:any = (id:any) => {
+    const url = `/detailCate/${id}`;
     return instance.get(url);
 }

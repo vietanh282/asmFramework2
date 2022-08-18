@@ -22,9 +22,9 @@ const SearchBar = () => {
     const handleFilter = (event: any) => {
         const searchWord = event.target.value;
         setWordEntered(searchWord);
+        
         const newFilter = listProductSearch2.filter((item: any) => {
             // console.log(item.name);
-
             return item.name.toLowerCase().includes(searchWord.toLowerCase())
         })
 
@@ -33,7 +33,6 @@ const SearchBar = () => {
         } else {
              setFilteredData(newFilter);
           
-           
         }
     }
 
@@ -42,13 +41,13 @@ const SearchBar = () => {
         setWordEntered("");
     };
 
-
+    console.log(filteredData);
+    
     return (
         <div className="search">
             <div className="searchInputs">
                 {/* <input
                     type="text"
-                  
                     value={wordEntered}
                     onChange={handleFilter}
                 /> */}

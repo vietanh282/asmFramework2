@@ -30,6 +30,7 @@ export const getProductIdCate:any = (id:number) => {
     const url = `/products?categories=${id}`;
     return instance.get(url);
 }
+
 export const listProductIdCateDetail:any = (id:number) => {
     const url = `/products?detailCate=${id}`;
     return instance.get(url);

@@ -37,6 +37,9 @@ const items: MenuItem[] = [
     getItem(<Link to="/admin/categories/phuKien">Phụ kiện</Link>, '2', <CustomerServiceFilled />),
     getItem(<Link to="/admin/categories/linhKien">Linh kiện</Link>, '3', <ApiFilled />),
   ]),
+  getItem('Đơn hàng', 'sub3', <AndroidFilled />, [
+    getItem(<Link to="/admin/order">Danh sách</Link>, '6', <UnorderedListOutlined />),
+  ]),
  
 ];
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];

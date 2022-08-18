@@ -7,7 +7,8 @@ import UploadImage from '../../../component/Product/UploadImage';
 import { listCate } from '../../../api/category';
 import { useDispatch, useSelector } from 'react-redux';
 import { getListCateDetailById } from '../../../features/Slide/categoryPhone/catePhone';
-
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 const { TextArea } = Input
 const { Option } = Select;
 
@@ -42,6 +43,8 @@ const AddProduct = () => {
 	const onFinish = async (values: any) => {
 		console.log('Success:', values);
 		console.log(image);
+		console.log(values);
+		
 
 		try {
 
@@ -166,13 +169,15 @@ const AddProduct = () => {
 						>
 							<TextArea name="feature" />
 						</Form.Item>
+
 						<Form.Item
 							name="description"
 							labelCol={{ span: 24 }}
 							label="Mô tả sản phẩm"
-							rules={[{ required: true, message: 'Mô tả sản phẩm' }]}
+							rules={[{ required: true, message:'Không được để trống' }]}
 						>
-							<TextArea name="description" />
+ 								<ReactQuill theme="snow"  style={{background:"#fff"}}  />
+							{/* <TextArea name="description" /> */}
 						</Form.Item>
 
 						<Form.Item>

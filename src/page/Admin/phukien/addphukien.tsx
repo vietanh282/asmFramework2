@@ -9,7 +9,7 @@ import { addCate, addCateDetail, listCate } from '../../../api/category';
 const { TextArea } = Input
 const { Option } = Select;
 
-const AddCategory = () => {
+const AddPhuKien = () => {
 	const [category, setCategory] = useState([])
 	const navigate = useNavigate()
 
@@ -28,11 +28,11 @@ const AddCategory = () => {
 
 		try {
 
-				const data = await addCateDetail({ ...values, categories: 1 })
+				const data = await addCateDetail({ ...values, categories: 2 })
 				// console.log(data);
 
 				message.success("Tạo mới thành công");
-				navigate("/admin/categories/phone")
+				navigate("/admin/categories/phuKien")
 			
 
 			// navigate(-1)
@@ -49,7 +49,7 @@ const AddCategory = () => {
 		<>
 			<Breadcrumb>
 				<Typography.Title level={2} style={{ margin: 0 }}>
-					Thêm mới
+					Thêm mới phụ kiện
 				</Typography.Title>
 			</Breadcrumb>
 			<Row gutter={24}>
@@ -95,4 +95,4 @@ const Breadcrumb = styled.div`
 const Label = styled.div`
 	font-size: 13px;
 `
-export default AddCategory
+export default AddPhuKien

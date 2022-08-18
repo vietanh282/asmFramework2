@@ -159,6 +159,7 @@ const ListLinhKien = () => {
                 title: 'Mô tả',
                 dataIndex: 'description',
                 key: 'description',
+                render: text => <div><div dangerouslySetInnerHTML={{__html:`${text}`}}></div></div>
             },
             {
                 title: "Hành Động", key: "action", render: (text, record: any) => (
